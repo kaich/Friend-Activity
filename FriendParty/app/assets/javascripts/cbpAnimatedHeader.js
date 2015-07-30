@@ -9,7 +9,7 @@
  * http://www.codrops.com
  */
 
- $(document).on('ready page:load', function(){
+$(document).on('ready page:load', function(){
 
 var cbpAnimatedHeader = (function() {
 

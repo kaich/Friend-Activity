@@ -5,6 +5,9 @@
  */
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
+
+$(document).on('ready page:load', function(){
+
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -24,3 +27,5 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+})
