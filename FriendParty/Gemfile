@@ -33,7 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 
 #simple form 
-gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
+#gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 
 #font awesome
 gem 'font-awesome-sass'
