@@ -1,5 +1,7 @@
-$(function() {
 
+$(function() {
+    if($("section#contact").length)
+    {
     $("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
@@ -61,6 +63,8 @@ $(function() {
         e.preventDefault();
         $(this).tab("show");
     });
+
+  }
 });
 
 
