@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+  <div class="panel-body"> <%= @group.intro %> </div>
+  <div class="panel-footer"> <%= @group.created_at %></div>
+</div>
+
+<table class="members" summary="Group members">
+  <%= render @users %>
+</table>
+<%= will_paginate @users %>

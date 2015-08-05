@@ -121,7 +121,29 @@ h1, h2, h3, h4, h5, h6 {
     			}
     		}
     	}
+
+      li.dropdown {
+        ul {
+           background-color: $gray-darkest;
+         li a {
+            @include heading-font;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: white;
+            &:hover,
+            &:focus {
+              color: $brand-primary;
+              outline: none;
+            }
+          }
+        }
+    	}
+      
     }
+
+  .dropdown-menu {
+    width: 50px ;
+  }
 	.navbar-nav>.active>a {
 		border-radius: 0;
 		color: white;

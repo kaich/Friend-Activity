@@ -38,6 +38,9 @@ gem 'devise'
 #font awesome
 gem 'font-awesome-sass'
 
+#will paginate
+gem 'will_paginate', '~> 3.0.6'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
