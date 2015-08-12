@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-heading"> <%= @group.name%> </div>
+  <div class="panel-body"> <%= application.content %> </div>
+  <div class="panel-footer"> <%= current_user.email %></div>
+  <%= form_for agree_group_application_path do |f| %>
+    <%= f.submit 'Submit', :disable_with => 'Submiting...' , class:"btn btn-primary" %> 
+  <% end %>
+</div>

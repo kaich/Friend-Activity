@@ -35,10 +35,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  def applyJoinGroup 
-    
-  end
-  
 
   private 
 
