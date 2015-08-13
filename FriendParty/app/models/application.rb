@@ -1,3 +1,4 @@
 class Application < ActiveRecord::Base
-  belongs_to :applicationable, :polymorphic => true  
+  belongs_to :group
+  belongs_to :user
 end

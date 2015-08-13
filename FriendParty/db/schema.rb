@@ -16,12 +16,15 @@ ActiveRecord::Schema.define(version: 20150812032133) do
   create_table "applications", force: true do |t|
     t.text     "content"
     t.integer  "user_id"
+    t.integer  "group_id"
     t.integer  "status"
-    t.integer  "applicationable_id"
-    t.string   "applicationable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "applications", ["group_id"], name: "index_applications_on_group_id"
+  add_index "applications", ["user_id", "group_id"], name: "index_applications_on_user_id_and_group_id", unique: true
+  add_index "applications", ["user_id"], name: "index_applications_on_user_id"
 
   create_table "groups", force: true do |t|
     t.string   "name"
