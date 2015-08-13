@@ -4,15 +4,14 @@ Rails.application.routes.draw do
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'regist' }
 
   resources :groups do 
-    resources :applications 
-  end
-
-  resources :group_application do
-    member do
-      put :agree
-      put :reject
+    resources :applications do
+      member do
+        patch :agree
+        patch :reject
+      end
     end
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
