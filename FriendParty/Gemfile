@@ -41,6 +41,10 @@ gem 'font-awesome-sass'
 #will paginate
 gem 'will_paginate', '~> 3.0.6'
 
+#bootstrap3-datetimepicker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

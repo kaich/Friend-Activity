@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812032133) do
+ActiveRecord::Schema.define(version: 20150814102029) do
+
+  create_table "activities", force: true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "originator_id"
+    t.integer  "status"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "applications", force: true do |t|
     t.text     "content"
@@ -40,9 +52,12 @@ ActiveRecord::Schema.define(version: 20150812032133) do
     t.datetime "updated_at"
   end
 
-  add_index "groups_users", ["group_id", "user_id"], name: "index_groups_users_on_group_id_and_user_id", unique: true
-  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id"
-  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id"
+  create_table "participator_activities", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -57,12 +72,9 @@ ActiveRecord::Schema.define(version: 20150812032133) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["group_id", "created_at"], name: "index_users_on_group_id_and_created_at"
-  add_index "users", ["group_id"], name: "index_users_on_group_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
