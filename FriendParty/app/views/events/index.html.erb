@@ -1,0 +1,8 @@
+<% for event in @events %>
+  <tr>
+    <td><%= <%= link_to event.name, show_activity_event_path  %></td>
+    <td><%= event.content  %></td>
+  </tr> 
+<% end %>  
+
+<%= will_paginate @events %>

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :activities  
+    resources :activities do
+      resources :events , shallow: true
+    end
   end
 
 
