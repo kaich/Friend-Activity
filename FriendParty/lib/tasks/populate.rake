@@ -5,6 +5,8 @@ namespace :db do
    make_groups
    make_activities
    make_events
+
+   puts "all task done!"
   end
 end
 
@@ -30,8 +32,8 @@ def make_groups
 end
 
 def make_activities
-  User.all[1...2].each do |user|
-    user.groups[1...2].each do |group|
+  User.limit(2).each do |user|
+    user.groups[0...2].each do |group|
       99.times do |n|
         name =  Faker::Name.name
         content = Faker::Lorem.paragraph 
@@ -48,9 +50,9 @@ def make_activities
 end
 
 def make_events
-  User.all[1...2].each do |user|
-    user.groups[1...2].each do |group|
-      group.activities[1...2].each do |activity|
+  User.limit(2).each do |user|
+    user.groups[0...2].each do |group|
+      group.activities[0...2].each do |activity|
         99.times do |n|
           name =  Faker::Name.name
           content = Faker::Lorem.paragraph 
