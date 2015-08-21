@@ -2,11 +2,11 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user! 
 
   def index
-    @activity = Activity.all
+    @activities = Activity.all.paginate(:page => params[:page],:per_page => 20)
   
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render xml: @activitys }
+      format.xml  { render xml: @activities }
     end
   end
 

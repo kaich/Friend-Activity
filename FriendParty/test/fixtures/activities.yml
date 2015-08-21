@@ -7,7 +7,7 @@ one:
   end_time: 2015-08-14
   originator: 1
   status: 1
-  participator: 1
+  #participator: 1
 
 two:
   name: MyString
@@ -16,4 +16,4 @@ two:
   end_time: 2015-08-14
   originator: 1
   status: 1
-  participator: 1
+  #participator: 1

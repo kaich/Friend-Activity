@@ -1,0 +1,9 @@
+<table class="table">  
+<% for activity in @activities %>
+  <tr>
+    <td><%=activity.name%></td>
+    <td><%=activity.content%></td>
+  </tr> 
+<% end %>
+</table>
+<%= will_paginate @activities ,renderer: BootstrapPagination::Rails%>

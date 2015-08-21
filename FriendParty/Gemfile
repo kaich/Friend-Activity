@@ -40,6 +40,7 @@ gem 'font-awesome-sass'
 
 #will paginate
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 #bootstrap3-datetimepicker
 gem 'momentjs-rails', '>= 2.9.0'
