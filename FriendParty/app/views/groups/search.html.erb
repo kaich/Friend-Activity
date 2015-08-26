@@ -1,0 +1,18 @@
+<table  class="table">
+<% for group in @groups %>
+  <tr>
+    <td>
+     <%= link_to group.name ,group_path(group) %> 
+    </td>
+    <td>
+      <%= "Introduction: #{group.intro}" %>
+    </td>
+    <% if  group.users.include? current_user %>
+      <td>
+        <%= link_to "Apply" ,new_group_application_path , class:"btn btn-primary" %>
+      </td>    
+    <% end %>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @activities ,renderer: BootstrapPagination::Rails%>

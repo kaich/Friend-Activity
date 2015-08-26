@@ -1,0 +1,13 @@
+<table  class="table">
+<% for group in @groups %>
+  <tr>
+    <td>
+     <%= link_to group.name ,group_path(group) %> 
+    </td>
+    <td>
+      <%= "Introduction: #{group.intro}" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @activities ,renderer: BootstrapPagination::Rails%>

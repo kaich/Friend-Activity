@@ -21,9 +21,21 @@ class GroupsController < ApplicationController
     end
   end
 
-  def index 
-    current_user.groups
+
+  def index
+    @groups = current_user.groups.paginate(:page => params[:page], :per_page => 20)
+  
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render xml: @model_class_names }
+    end
   end
+
+  
+  def search
+    @groups = Group.search(params[:search])
+  end
+
 
   def show
     @group = Group.find(params[:id])
