@@ -1,3 +1,9 @@
+<% form_tag search_groups_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 <table  class="table">
 <% for group in @groups %>
   <tr>
@@ -9,7 +15,7 @@
     </td>
     <% if  group.users.include? current_user %>
       <td>
-        <%= link_to "Apply" ,new_group_application_path , class:"btn btn-primary" %>
+        <%= link_to "Apply" ,new_group_application_path(group,@application) , class:"btn btn-primary" %>
       </td>    
     <% end %>
   </tr>

@@ -11,6 +11,7 @@ class ApplicationsController < ApplicationController
   end
 
   def new
+    @group = Group.find(params[:group_id])
     @application = Application.new
   
     respond_to do |format|
