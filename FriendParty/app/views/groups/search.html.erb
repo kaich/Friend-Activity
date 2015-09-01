@@ -1,8 +1,12 @@
 <%= form_tag search_groups_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+  <div class="input-group">
+    <%= text_field_tag :search, params[:search] ,class:"form-control"%>
+    <span class="input-group-btn">
+      <%= button_tag "Search", :name => nil ,class:"btn btn-default" do%>
+        <span class="glyphicon glyphicon-search"></span>
+      <% end %>
+    </span>
+  </div>
 <% end %>
 
 <table  class="table">
