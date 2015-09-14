@@ -18,7 +18,7 @@
     <td>
       <%= "Introduction: #{group.intro}" %>
     </td>
-    <% if  group.users.include? current_user %>
+    <% unless  group.users.include? current_user %>
       <td>
         <%= link_to "Apply" ,new_group_application_path(group,@application) , class:"btn btn-primary" %>
       </td>    

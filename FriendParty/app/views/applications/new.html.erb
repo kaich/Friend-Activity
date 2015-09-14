@@ -1,4 +1,7 @@
 <%= form_for [@group, @application] do |f| %>
-   <%= f.text_area :content , class:"from-control" %> 
+   <div class="form-group">
+     <%= f.label :content, 'contetn' %>
+     <%= f.text_area :content , class:"form-control" %> 
+   </div> 
    <%= f.submit 'Join', :disable_with => 'ing...' ,class:"btn btn-primary"%>
 <% end %>
