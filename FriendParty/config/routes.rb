@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
 
     resources :activities do
+      collection do 
+        post :preview
+      end
       resources :events , shallow: true
     end
   end

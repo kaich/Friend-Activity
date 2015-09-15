@@ -44,6 +44,13 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def preview
+    # Initializes a Markdown parser
+    renderer = Redcarpet::Markdown.
+    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+    markdown.render(params[:body])
+  end
+
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
