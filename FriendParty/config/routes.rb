@@ -20,6 +20,7 @@ Rails.application.routes.draw do
         post :preview
       end
       resources :events , shallow: true
+      resources :comments , shallow: true
     end
   end
 

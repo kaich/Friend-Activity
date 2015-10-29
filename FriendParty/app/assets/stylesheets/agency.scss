@@ -8,6 +8,10 @@ body {
 	@include body-font;
 }
 
+div {
+  word-wrap: break-word;
+}
+
 .text-muted {
 	color: $gray;
 }
@@ -759,7 +763,7 @@ body {
 
 /* Markdown Styles */
 .markdown {
-  position:relative;
+  /*position:relative;*/
   line-height: 1.8em; font-size:14px; text-overflow: ellipsis; word-wrap: break-word;
   font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   img { max-width: 100%; }

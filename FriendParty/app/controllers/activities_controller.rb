@@ -2,7 +2,8 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user! 
 
   def index
-    @activities = Activity.all.paginate(:page => params[:page],:per_page => 20)
+    @group=Group.find(params[:group_id])
+    @activities = @group.activities.paginate(:page => params[:page],:per_page => 20)
   
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +26,7 @@ class ActivitiesController < ApplicationController
     respond_to do |wants|
       if @activity.save
         flash[:notice] = 'activity was successfully created.'
-        wants.html { redirect_to(@activity) }
+        wants.html { redirect_to({action: "show", id: @activity.id}) }
         wants.xml { render :xml => @activity, :status => :created, :location => @activity }
       else
         flash[:notice] = 'activity was failed created.'
@@ -36,6 +37,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @group=Group.find(params[:group_id])
     @activity = Activity.find(params[:id])
   
     respond_to do |format|
@@ -46,9 +48,10 @@ class ActivitiesController < ApplicationController
 
   def preview
     # Initializes a Markdown parser
-    renderer = Redcarpet::Markdown.
-    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
-    markdown.render(params[:body])
+    result = render_markdown params[:body]
+    
+    render text: result
+
   end
 
   def destroy

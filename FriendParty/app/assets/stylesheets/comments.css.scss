@@ -1,0 +1,27 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.comment {
+  width:100%;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 10px ;
+}
+
+div.comment_username {
+  font-size: 20px;
+  font-family: Cursive;
+}
+
+div.comment_content {
+  margin-top: 10px;
+}
+
+textarea#comment_content {
+  width: 100%;
+  height: 100px;
+  display: inline;
+  overflow: hidden;
+}

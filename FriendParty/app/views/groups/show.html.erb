@@ -5,7 +5,9 @@
 
 <%= render @group.applications %>
 
-<%= render 'applications/form' %>
+<% if !user_in_group? @group %>
+  <%= render 'applications/form' %>
+<% end %>
 
 <table class="members" summary="Group members">
   <%= render @users %>

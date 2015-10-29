@@ -1,0 +1,13 @@
+<div class="create_comment">
+  <%= form_for [@group , @activity, if @activity.nil? then Comment.new  else @activity.comments.build end] do |f| %>
+
+    <%= render "shared/post_header" %>
+
+    <div class="form-group" id="content">
+      <%= f.label :content, 'content' %>
+      <%= f.text_area :content, class:"form-control" %>
+    </div>
+
+    <%= f.submit 'Submit',:class=>"btn", :disable_with => 'Submiting...' %>
+  <% end %>
+</div>

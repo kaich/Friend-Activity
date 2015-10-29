@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818072541) do
+ActiveRecord::Schema.define(version: 20151028113432) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20150818072541) do
   add_index "applications", ["group_id"], name: "index_applications_on_group_id"
   add_index "applications", ["user_id", "group_id"], name: "index_applications_on_user_id_and_group_id", unique: true
   add_index "applications", ["user_id"], name: "index_applications_on_user_id"
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.string   "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "name"

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :groups
   has_many :applications
+  has_many :comments
   has_many :originated_group , class_name: :Activity ,foreign_key: :originator_id
 
   has_many :participator_activities 

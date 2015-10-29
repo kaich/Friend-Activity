@@ -1,11 +1,23 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-   <%= @activity.name %> 
+    <%= "<h4>#{@activity.name}</h4>".html_safe %> 
+   <div class='star_time'>
+     <%= format_time @activity.start_time %>
+   </div>
+   <div class="end_time">
+     <%= format_time @activity.end_time %>
+   </div>
   </div>
   <div class="panel-body">
-   <%= @activity.content %> 
+   <%= render_markdown(@activity.content).html_safe %> 
   </div>
   <div class="panel-footer">
    <%= @activity.originator.email %> 
   </div>
 </div>
+
+<% for @comment in @activity.comments %>
+ <%= render @comment %> 
+<% end %>
+
+<%= render "comments/form" %>

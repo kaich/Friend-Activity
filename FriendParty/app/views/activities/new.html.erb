@@ -6,20 +6,7 @@
     <%= f.text_field :name ,class:"form-control"%> 
   </div>
 
-  <%#create preview toolbar%>
-  <div class="form-group">
-    <div class="editor-toolbar col-sm-offset-2 col-sm-10">
-      <ul class="nav nav-pills">
-        <li class="edit active"><%= link_to('edit', "#") %></li>
-        <li class="preview"><%= link_to('preview', "#") %></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :content, 'content' %>
-    <%= f.text_area :content, class:"form-control" %>
-  </div>
+  <%#date picker%>
   <div class="form-group">
     <%= f.label :startime, 'starttime' %>
     <%= f.text_field :start_time,class:"form-control datepicker"%> 
@@ -28,6 +15,14 @@
     <%= f.label :endtime, 'endtime' %>
     <%= f.text_field :end_time,class:"form-control datepicker"%> 
   </div>
+
+  <%= render "shared/post_header" %>
+
+  <div class="form-group" id="content">
+    <%= f.label :content, 'content' %>
+    <%= f.text_area :content, class:"form-control" %>
+  </div>
+
 
   <%= f.submit 'Submit', :disable_with => 'Submiting...', class:"btn btn-primary"%>
 <% end %>

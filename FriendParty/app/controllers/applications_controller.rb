@@ -25,15 +25,21 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
 
     respond_to do |wants|
-      if !user_in_group? && @group.save
-        flash[:notice] = 'applicatin was successfully created.'
-        wants.html { redirect_to(@group) }
-        wants.xml { render :xml => @application, :status => :created, :location => @application }
+      if user_in_group? 
+          flash[:notice] = 'You have in this group.'
+          wants.html { redirect_to(@group) }
       else
-        flash[:notice] = 'applicatin was failed created.'
-        wants.html { redirect_to(@group) }
-        #wants.html { render :action => "new" }
-        #wants.xml { render :xml => @application.errors, :status => :unprocessable_entity }
+
+        if  @group.save
+          flash[:notice] = 'applicatin was successfully created.'
+          wants.html { redirect_to(@group) }
+          wants.xml { render :xml => @application, :status => :created, :location => @application }
+        else
+          flash[:notice] = 'applicatin was failed created.'
+          wants.html { redirect_to(@group) }
+          #wants.html { render :action => "new" }
+          #wants.xml { render :xml => @application.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
