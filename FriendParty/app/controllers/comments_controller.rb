@@ -17,26 +17,18 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     
     respond_to do |wants|
-      if params[:controller] == self.class.to_s
 
         if @comment.save
           flash[:notice] = 'Comment was successfully created.'
           wants.html { redirect_to(@comment) }
-          wants.xml { render :xml => @comment, :status => :created, :location => @comment }
+          wants.js {}
+          wants.json { render :json => @comment, :status => :created, :location => @comment }
         else
           wants.html { render :action => "new" }
-          wants.xml { render :xml => @comment.errors, :status => :unprocessable_entity }
+          wants.json { render :json => @comment.errors, :status => :unprocessable_entity }
         end
 
-      else
-
-        if @comment.save
-          flash[:notice] = 'Comment was successfully created.'
-          wants.html { redirect_to(group_activity_url(@group , @activity)) }
-          wants.xml { render :xml => @comment, :status => :created, :location => @comment }
-        end
-
-      end
+      
     end
   end
 

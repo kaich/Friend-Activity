@@ -1,5 +1,5 @@
 <div class="create_comment">
-  <%= form_for [@group , @activity, if @activity.nil? then Comment.new  else @activity.comments.build end] do |f| %>
+  <%= form_for [@group , @activity, if @activity.nil? then Comment.new  else @activity.comments.build end], remote: true do |f| %>
 
     <%= render "shared/post_header" %>
 

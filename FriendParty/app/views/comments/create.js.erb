@@ -1,0 +1,10 @@
+comment_box = $("#comment_box")
+new_comment = '<%= j(render @comment) %>'
+comment_form = $('#new_comment')
+<% if @comment %>
+  comment_box.append(new_comment) 
+  $('textarea',comment_form).val("") 
+  $(".edit").click()
+<% else %>
+  $('textarea',comment_form).focus() 
+<% end %>

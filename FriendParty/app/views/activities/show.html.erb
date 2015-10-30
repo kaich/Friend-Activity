@@ -16,8 +16,10 @@
   </div>
 </div>
 
-<% for @comment in @activity.comments %>
- <%= render @comment %> 
-<% end %>
+<div id="comment_box">
+  <% for @comment in @activity.comments %>
+   <%= render @comment %> 
+  <% end %>
+</div>
 
 <%= render "comments/form" %>
