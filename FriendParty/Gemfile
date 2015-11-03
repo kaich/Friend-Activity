@@ -50,6 +50,9 @@ gem 'will_paginate-bootstrap'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
+#notification
+gem "gritter", "1.2.0"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
