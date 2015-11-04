@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
 
   has_many :participator_activities 
   has_many :participant_activities, :through => :participator_activities, :source => :activity
+
+  has_many :likes 
 end
