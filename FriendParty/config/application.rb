@@ -22,3 +22,5 @@ module FriendParty
     config.i18n.default_locale = :zh
   end
 end
+
+require 'markdown'
