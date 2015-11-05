@@ -13,4 +13,16 @@ class User < ActiveRecord::Base
   has_many :participant_activities, :through => :participator_activities, :source => :activity
 
   has_many :likes 
+
+
+  def like(likeable)
+    self.likes << likeable 
+    self.save
+  end
+
+  def unlike(likeable)
+    self.likes.delete likeable 
+    self.save
+  end
+
 end

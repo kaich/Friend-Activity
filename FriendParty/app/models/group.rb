@@ -5,6 +5,7 @@ class Group < ActiveRecord::Base
 
    has_many :applications
    has_many :activities
+   has_one :like , as: :likeable
 
    def self.search(search)
     if search

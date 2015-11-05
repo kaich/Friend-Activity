@@ -5,10 +5,10 @@
     </div>
   </div>
   <div class="panel-body">
-    <div class="toDesktop btn btn-primary" id="toDesktop">
-     <i class="fa fa-desktop fa-2x"></i> 
-    </div>
-    <%= @group.intro %>
+    <div class="likeable btn btn-primary" id="likeable" data-type=<%=controller_name%> data-id=<%=@group.like.id%> data-method=<%= @group.like.liked_by_user?(current_user) ? "delete" :"post"  %>>
+     <%= like_icon_class(@group.like) %>
+   </div>
+   <%= @group.intro %>
   </div>
   <div class="panel-footer">
     <%= @group.created_at %>

@@ -6,4 +6,10 @@ class Like < ActiveRecord::Base
     scope: [:likeable_id, :likeable_type],
     message: 'can only like an item once'
   }
+
+
+  def liked_by_user?(user)
+    self.user_id == user.id
+  end
+
 end
