@@ -6,8 +6,7 @@ class LikesController < ApplicationController
   end
 
 
-  def destory 
-    debugger
+  def destroy 
     current_user.unlike @likeable_item
   end
 
