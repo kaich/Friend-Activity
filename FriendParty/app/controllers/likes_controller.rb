@@ -14,7 +14,7 @@ class LikesController < ApplicationController
   private 
 
   def find_likeable
-    @likeable_item = Group.find_by_id(params[:id]).like
+    @likeable_item = Group.find_by_id(params[:id]).try(:like)
     if !@likeable_item
       item = Group.find_by_id(params[:id])
       @likeable_item = Like.new(likeable: item) if item 

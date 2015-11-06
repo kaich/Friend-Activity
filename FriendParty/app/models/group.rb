@@ -7,6 +7,8 @@ class Group < ActiveRecord::Base
    has_many :activities
    has_one :like , as: :likeable
 
+   mount_uploader :avatar, AvatarUploader
+
    def self.search(search)
     if search
       where(['name LIKE ?', "%#{search}%"])

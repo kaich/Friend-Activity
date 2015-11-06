@@ -5,9 +5,10 @@
     </div>
   </div>
   <div class="panel-body">
-    <div class="likeable btn btn-primary" id="likeable" data-type=<%=controller_name%> data-id=<%=@group.like.id%> data-method=<%= @group.like.liked_by_user?(current_user) ? "delete" :"post"  %>>
-     <%= like_icon_class(@group.like) %>
-   </div>
+    <div class="group_avatar">
+      <%= image_tag(@group.avatar_url) if @group.avatar? %>  
+    </div>
+   <%= like_tag @group %>
    <%= @group.intro %>
   </div>
   <div class="panel-footer">

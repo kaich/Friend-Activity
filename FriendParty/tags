@@ -1,0 +1,155 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$.fn.jqBootstrapValidation	app/assets/javascripts/jqBootstrapValidation.js	/^	$.fn.jqBootstrapValidation = function( method ) {$/;"	f
+$.jqBootstrapValidation	app/assets/javascripts/jqBootstrapValidation.js	/^  $.jqBootstrapValidation = function (options) {$/;"	f
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+ActivitiesController	app/controllers/activities_controller.rb	/^class ActivitiesController < ApplicationController$/;"	c
+ActivitiesControllerTest	test/controllers/activities_controller_test.rb	/^class ActivitiesControllerTest < ActionController::TestCase$/;"	c
+ActivitiesHelper	app/helpers/activities_helper.rb	/^module ActivitiesHelper$/;"	m
+ActivitiesHelperTest	test/helpers/activities_helper_test.rb	/^class ActivitiesHelperTest < ActionView::TestCase$/;"	c
+Activity	app/models/activity.rb	/^class Activity < ActiveRecord::Base$/;"	c
+ActivityTest	test/models/activity_test.rb	/^class ActivityTest < ActiveSupport::TestCase$/;"	c
+Application	app/models/application.rb	/^class Application < ActiveRecord::Base$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:FriendParty
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationTest	test/models/application_test.rb	/^class ApplicationTest < ActiveSupport::TestCase$/;"	c
+ApplicationsController	app/controllers/applications_controller.rb	/^class ApplicationsController < ApplicationController$/;"	c
+ApplicationsControllerTest	test/controllers/applications_controller_test.rb	/^class ApplicationsControllerTest < ActionController::TestCase$/;"	c
+ApplicationsHelper	app/helpers/applications_helper.rb	/^module ApplicationsHelper$/;"	m
+ApplicationsHelperTest	test/helpers/applications_helper_test.rb	/^class ApplicationsHelperTest < ActionView::TestCase$/;"	c
+Comment	app/models/comment.rb	/^class Comment < ActiveRecord::Base$/;"	c
+CommentTest	test/models/comment_test.rb	/^class CommentTest < ActiveSupport::TestCase$/;"	c
+CommentsController	app/controllers/comments_controller.rb	/^class CommentsController < ApplicationController$/;"	c
+CommentsControllerTest	test/controllers/comments_controller_test.rb	/^class CommentsControllerTest < ActionController::TestCase$/;"	c
+CommentsHelper	app/helpers/comments_helper.rb	/^module CommentsHelper$/;"	m
+CommentsHelperTest	test/helpers/comments_helper_test.rb	/^class CommentsHelperTest < ActionView::TestCase$/;"	c
+CreateActivities	db/migrate/20150814012029_create_activities.rb	/^class CreateActivities < ActiveRecord::Migration$/;"	c
+CreateApplications	db/migrate/20150812032133_create_applications.rb	/^class CreateApplications < ActiveRecord::Migration$/;"	c
+CreateComments	db/migrate/20151028113432_create_comments.rb	/^class CreateComments < ActiveRecord::Migration$/;"	c
+CreateEvents	db/migrate/20150818072541_create_events.rb	/^class CreateEvents < ActiveRecord::Migration$/;"	c
+CreateGroups	db/migrate/20150804074105_create_groups.rb	/^class CreateGroups < ActiveRecord::Migration$/;"	c
+CreateGroupsUsers	db/migrate/20150814091014_create_groups_users.rb	/^class CreateGroupsUsers < ActiveRecord::Migration$/;"	c
+CreateLikes	db/migrate/20151104115914_create_likes.rb	/^class CreateLikes < ActiveRecord::Migration$/;"	c
+CreateParticipatorActivities	db/migrate/20150814102029_create_participator_activities.rb	/^class CreateParticipatorActivities < ActiveRecord::Migration$/;"	c
+DeviseCreateUsers	db/migrate/20150729093845_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+Event	app/models/event.rb	/^class Event < ActiveRecord::Base$/;"	c
+EventTest	test/models/event_test.rb	/^class EventTest < ActiveSupport::TestCase$/;"	c
+EventsController	app/controllers/events_controller.rb	/^class EventsController < ApplicationController$/;"	c
+EventsControllerTest	test/controllers/events_controller_test.rb	/^class EventsControllerTest < ActionController::TestCase$/;"	c
+EventsHelper	app/helpers/events_helper.rb	/^module EventsHelper$/;"	m
+EventsHelperTest	test/helpers/events_helper_test.rb	/^class EventsHelperTest < ActionView::TestCase$/;"	c
+FriendParty	config/application.rb	/^module FriendParty$/;"	m
+Group	app/models/group.rb	/^class Group < ActiveRecord::Base$/;"	c
+GroupTest	test/models/group_test.rb	/^class GroupTest < ActiveSupport::TestCase$/;"	c
+GroupsController	app/controllers/groups_controller.rb	/^class GroupsController < ApplicationController$/;"	c
+GroupsControllerTest	test/controllers/groups_controller_test.rb	/^class GroupsControllerTest < ActionController::TestCase$/;"	c
+GroupsHelper	app/helpers/groups_helper.rb	/^module GroupsHelper$/;"	m
+GroupsHelperTest	test/helpers/groups_helper_test.rb	/^class GroupsHelperTest < ActionView::TestCase$/;"	c
+GroupsUsers	app/models/groups_users.rb	/^class GroupsUsers < ActiveRecord::Base$/;"	c
+GroupsUsersTest	test/models/groups_users_test.rb	/^class GroupsUsersTest < ActiveSupport::TestCase$/;"	c
+HomeController	app/controllers/home_controller.rb	/^class HomeController < ApplicationController$/;"	c
+HomeControllerTest	test/controllers/home_controller_test.rb	/^class HomeControllerTest < ActionController::TestCase$/;"	c
+HomeHelper	app/helpers/home_helper.rb	/^module HomeHelper$/;"	m
+HomeHelperTest	test/helpers/home_helper_test.rb	/^class HomeHelperTest < ActionView::TestCase$/;"	c
+Like	app/models/like.rb	/^class Like < ActiveRecord::Base$/;"	c
+LikeTest	test/models/like_test.rb	/^class LikeTest < ActiveSupport::TestCase$/;"	c
+LikesController	app/controllers/likes_controller.rb	/^class LikesController < ApplicationController$/;"	c
+LikesControllerTest	test/controllers/likes_controller_test.rb	/^class LikesControllerTest < ActionController::TestCase$/;"	c
+LikesHelper	app/helpers/likes_helper.rb	/^module LikesHelper$/;"	m
+LikesHelperTest	test/helpers/likes_helper_test.rb	/^class LikesHelperTest < ActionView::TestCase$/;"	c
+ParticipatorActivity	app/models/participator_activity.rb	/^class ParticipatorActivity < ActiveRecord::Base$/;"	c
+ParticipatorActivityTest	test/models/participator_activity_test.rb	/^class ParticipatorActivityTest < ActiveSupport::TestCase$/;"	c
+PostController	lib/markdown.rb	/^class PostController < ApplicationController$/;"	c
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserTest	test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+Users	app/controllers/users/confirmations_controller.rb	/^class Users::ConfirmationsController < Devise::ConfirmationsController$/;"	c
+Users	app/controllers/users/omniauth_callbacks_controller.rb	/^class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController$/;"	c
+Users	app/controllers/users/passwords_controller.rb	/^class Users::PasswordsController < Devise::PasswordsController$/;"	c
+Users	app/controllers/users/registrations_controller.rb	/^class Users::RegistrationsController < Devise::RegistrationsController$/;"	c
+Users	app/controllers/users/sessions_controller.rb	/^class Users::SessionsController < Devise::SessionsController$/;"	c
+Users	app/controllers/users/unlocks_controller.rb	/^class Users::UnlocksController < Devise::UnlocksController$/;"	c
+WelcomeController	app/controllers/welcome_controller.rb	/^class WelcomeController < ApplicationController$/;"	c
+WelcomeControllerTest	test/controllers/welcome_controller_test.rb	/^class WelcomeControllerTest < ActionController::TestCase$/;"	c
+WelcomeHelper	app/helpers/welcome_helper.rb	/^module WelcomeHelper$/;"	m
+WelcomeHelperTest	test/helpers/welcome_helper_test.rb	/^class WelcomeHelperTest < ActionView::TestCase$/;"	c
+activity_params	app/controllers/activities_controller.rb	/^  def activity_params$/;"	f	class:ActivitiesController
+addClass	app/assets/javascripts/classie.js	/^  addClass = function( elem, c ) {$/;"	f
+after_sign_out_path_for	app/controllers/application_controller.rb	/^  def after_sign_out_path_for(resource_or_scope)$/;"	f	class:ApplicationController
+agree	app/controllers/applications_controller.rb	/^  def agree$/;"	f	class:ApplicationsController
+application_params	app/controllers/applications_controller.rb	/^  def application_params$/;"	f	class:ApplicationsController
+change	db/migrate/20150729093845_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	db/migrate/20150804074105_create_groups.rb	/^  def change$/;"	f	class:CreateGroups
+change	db/migrate/20150812032133_create_applications.rb	/^  def change$/;"	f	class:CreateApplications
+change	db/migrate/20150814012029_create_activities.rb	/^  def change$/;"	f	class:CreateActivities
+change	db/migrate/20150814091014_create_groups_users.rb	/^  def change$/;"	f	class:CreateGroupsUsers
+change	db/migrate/20150814102029_create_participator_activities.rb	/^  def change$/;"	f	class:CreateParticipatorActivities
+change	db/migrate/20150818072541_create_events.rb	/^  def change$/;"	f	class:CreateEvents
+change	db/migrate/20151028113432_create_comments.rb	/^  def change$/;"	f	class:CreateComments
+change	db/migrate/20151104115914_create_likes.rb	/^  def change$/;"	f	class:CreateLikes
+classReg	app/assets/javascripts/classie.js	/^function classReg( className ) {$/;"	f
+classie.add	app/assets/javascripts/classie.js	/^  add: addClass,$/;"	p
+classie.addClass	app/assets/javascripts/classie.js	/^  addClass: addClass,$/;"	p
+classie.has	app/assets/javascripts/classie.js	/^  has: hasClass,$/;"	p
+classie.hasClass	app/assets/javascripts/classie.js	/^  hasClass: hasClass,$/;"	p
+classie.remove	app/assets/javascripts/classie.js	/^  remove: removeClass,$/;"	p
+classie.removeClass	app/assets/javascripts/classie.js	/^  removeClass: removeClass,$/;"	p
+classie.toggle	app/assets/javascripts/classie.js	/^  toggle: toggleClass$/;"	p
+classie.toggleClass	app/assets/javascripts/classie.js	/^  toggleClass: toggleClass,$/;"	p
+comment_params	app/controllers/comments_controller.rb	/^  def comment_params$/;"	f	class:CommentsController
+create	app/controllers/activities_controller.rb	/^  def create$/;"	f	class:ActivitiesController
+create	app/controllers/applications_controller.rb	/^  def create$/;"	f	class:ApplicationsController
+create	app/controllers/comments_controller.rb	/^  def create$/;"	f	class:CommentsController
+create	app/controllers/events_controller.rb	/^  def create$/;"	f	class:EventsController
+create	app/controllers/groups_controller.rb	/^  def create$/;"	f	class:GroupsController
+create	app/controllers/likes_controller.rb	/^  def create$/;"	f	class:LikesController
+defaults.options	app/assets/javascripts/jqBootstrapValidation.js	/^		options: {$/;"	p
+destory	app/controllers/likes_controller.rb	/^  def destory $/;"	f	class:LikesController
+destroy	app/controllers/activities_controller.rb	/^  def destroy$/;"	f	class:ActivitiesController
+destroy	app/controllers/applications_controller.rb	/^  def destroy$/;"	f	class:ApplicationsController
+destroy	app/controllers/comments_controller.rb	/^  def destroy$/;"	f	class:CommentsController
+event_params	app/controllers/events_controller.rb	/^  def event_params$/;"	f	class:EventsController
+executeFunctionByName	app/assets/javascripts/jqBootstrapValidation.js	/^  function executeFunctionByName(functionName, context \/*, args*\/) {$/;"	f
+find_likeable	app/controllers/likes_controller.rb	/^  def find_likeable$/;"	f	class:LikesController
+formatValidatorName	app/assets/javascripts/jqBootstrapValidation.js	/^	var formatValidatorName = function (name) {$/;"	f
+format_time	app/helpers/application_helper.rb	/^  def format_time(time)$/;"	f	class:ApplicationHelper
+getValue	app/assets/javascripts/jqBootstrapValidation.js	/^	var getValue = function ($this) {$/;"	f
+group_params	app/controllers/groups_controller.rb	/^  def group_params$/;"	f	class:GroupsController
+hasClass	app/assets/javascripts/classie.js	/^  hasClass = function( elem, c ) {$/;"	f
+hasClass	app/assets/javascripts/classie.js	/^var hasClass, addClass, removeClass;$/;"	v
+index	app/controllers/activities_controller.rb	/^  def index$/;"	f	class:ActivitiesController
+index	app/controllers/events_controller.rb	/^  def index$/;"	f	class:EventsController
+index	app/controllers/groups_controller.rb	/^  def index$/;"	f	class:GroupsController
+index	app/controllers/welcome_controller.rb	/^  def index$/;"	f	class:WelcomeController
+index	lib/markdown.rb	/^  def index$/;"	f	class:PostController
+like	app/models/user.rb	/^  def like(likeable)$/;"	f	class:User
+like_icon_class	app/helpers/groups_helper.rb	/^  def like_icon_class(likeable)$/;"	f	class:GroupsHelper
+liked_by_user?	app/models/like.rb	/^  def liked_by_user?(user)$/;"	f	class:Like
+markdown	app/controllers/home_controller.rb	/^  def markdown$/;"	f	class:HomeController
+new	app/controllers/activities_controller.rb	/^  def new$/;"	f	class:ActivitiesController
+new	app/controllers/applications_controller.rb	/^  def new$/;"	f	class:ApplicationsController
+new	app/controllers/comments_controller.rb	/^  def new$/;"	f	class:CommentsController
+new	app/controllers/events_controller.rb	/^  def new$/;"	f	class:EventsController
+new	app/controllers/groups_controller.rb	/^  def new$/;"	f	class:GroupsController
+preview	app/controllers/activities_controller.rb	/^  def preview$/;"	f	class:ActivitiesController
+regexFromString	app/assets/javascripts/jqBootstrapValidation.js	/^  function regexFromString(inputstring) {$/;"	f
+reject	app/controllers/applications_controller.rb	/^  def reject$/;"	f	class:ApplicationsController
+removeClass	app/assets/javascripts/classie.js	/^  removeClass = function( elem, c ) {$/;"	f
+render_markdown	app/helpers/application_helper.rb	/^  def render_markdown(markdown_content)$/;"	f	class:ApplicationHelper
+search	app/controllers/groups_controller.rb	/^  def search$/;"	f	class:GroupsController
+search	app/models/group.rb	/^   def self.search(search)$/;"	F	class:Group
+show	app/controllers/activities_controller.rb	/^  def show$/;"	f	class:ActivitiesController
+show	app/controllers/applications_controller.rb	/^  def show$/;"	f	class:ApplicationsController
+show	app/controllers/events_controller.rb	/^  def show$/;"	f	class:EventsController
+show	app/controllers/groups_controller.rb	/^  def show$/;"	f	class:GroupsController
+toggleClass	app/assets/javascripts/classie.js	/^function toggleClass( elem, c ) {$/;"	f
+uniqueForms	app/assets/javascripts/jqBootstrapValidation.js	/^        var uniqueForms = $.unique($/;"	v
+unlike	app/models/user.rb	/^  def unlike(likeable)$/;"	f	class:User
+update	app/controllers/comments_controller.rb	/^  def update$/;"	f	class:CommentsController
+update	app/controllers/events_controller.rb	/^  def update$/;"	f	class:EventsController
+user_in_group?	app/controllers/applications_controller.rb	/^  def user_in_group?$/;"	f	class:ApplicationsController
+user_in_group?	app/helpers/application_helper.rb	/^  def user_in_group?(group)$/;"	f	class:ApplicationHelper
