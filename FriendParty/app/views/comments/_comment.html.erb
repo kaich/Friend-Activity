@@ -1,6 +1,6 @@
 <div class="comment">
   <div class="comment_username">
-    <%= @comment.user.email %>
+    <%= @comment.user.name %>
   </div>
   <div class="comment_content">
     <%= render_markdown(@comment.content).html_safe %>

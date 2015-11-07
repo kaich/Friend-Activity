@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
 
   has_many :likes 
 
+  has_many :owner_groups , class_name: "Group" , foreign_key: 'user_id'
+
 
   def like(likeable)
     self.likes << likeable 

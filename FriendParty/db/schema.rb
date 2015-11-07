@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106033324) do
+ActiveRecord::Schema.define(version: 20151107063434) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20151106033324) do
   create_table "groups", force: true do |t|
     t.string   "name"
     t.text     "intro"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
@@ -78,6 +79,8 @@ ActiveRecord::Schema.define(version: 20151106033324) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", unique: true
 
   create_table "participator_activities", force: true do |t|
     t.integer  "user_id"
@@ -99,6 +102,7 @@ ActiveRecord::Schema.define(version: 20151106033324) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

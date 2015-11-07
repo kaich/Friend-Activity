@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user! 
 
   def new
     @group = Group.new  
@@ -52,6 +51,7 @@ class GroupsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def group_params
-    params.require(:group).permit(:name, :intro,:avatar)
+    final_params = params.require(:group).permit(:name, :intro,:avatar)
+    final_params[:user_id] = current_user.id
   end
 end

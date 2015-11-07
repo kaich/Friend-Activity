@@ -11,10 +11,11 @@ namespace :db do
 end
 
 def make_users
-  30.times do |n|
+  10.times do |n|
     email = Faker::Internet.email
+    name = Faker::Name.name
     password = "password"
-    User.create!(:email => email , :password => password , :password_confirmation => password)
+    User.create!(:email => email , :password => password , :password_confirmation => password, :name => name)
   end 
   puts "create users"
 end
@@ -24,7 +25,7 @@ def make_groups
     20.times do |n|
       name = Faker::Name.name
       content =  Faker::Lorem.paragraph 
-      user.groups.build( :name => name , :intro => content)
+      user.groups.build( :name => name , :intro => content ,:user_id => user.id)
       user.save! 
     end 
   end
@@ -53,7 +54,7 @@ def make_events
   User.limit(2).each do |user|
     user.groups[0...2].each do |group|
       group.activities[0...2].each do |activity|
-        99.times do |n|
+        19.times do |n|
           name =  Faker::Name.name
           content = Faker::Lorem.paragraph 
           start_time = Faker::Time.between(DateTime.now - 100, DateTime.now)
