@@ -1,6 +1,6 @@
 <% for event in @events %>
   <tr>
-    <td><%=  link_to event.name, show_activity_event_path  %></td>
+    <td><%=  link_to event.name, event_path(event)  %></td>
     <td><%= event.content  %></td>
   </tr> 
 <% end %>  
