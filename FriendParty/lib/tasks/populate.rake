@@ -61,7 +61,7 @@ def make_events
           end_time = Faker::Time.between(DateTime.now - 50, DateTime.now)
           activity_id = activity.id
 
-          Event.create!(:name => name , :content => content ,:start_time => start_time ,:end_time => end_time)
+          Event.create!(:name => name , :content => content ,:start_time => start_time ,:end_time => end_time, :activity_id => activity_id , :user_id => user.id)
         end 
       end 
     end

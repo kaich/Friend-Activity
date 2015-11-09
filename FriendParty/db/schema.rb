@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20151107063434) do
   create_table "events", force: true do |t|
     t.string   "name"
     t.text     "content"
+    t.integer  "activity_id"
+    t.integer  "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at"

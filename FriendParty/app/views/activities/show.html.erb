@@ -12,9 +12,14 @@
    <%= render_markdown(@activity.content).html_safe %> 
   </div>
   <div class="panel-footer">
-   <%= @activity.originator.email %> 
+   <%= @activity.originator.name %> 
   </div>
 </div>
+
+<div class="float-control">
+  <%= link_to "<i class='fa fa-plus'></i> events".html_safe , group_activity_events_path ,class:'btn btn-primary'%> 
+</div>
+
 
 <div id="comment_box">
   <% for @comment in @activity.comments %>

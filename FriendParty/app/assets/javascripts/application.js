@@ -17,4 +17,8 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require gritter
+//= require bootstrap-markdown
+//= require markdown-js/dist/markdown.js
+//= require marked
+//= require to-markdown
 //= require_tree .

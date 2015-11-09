@@ -9,11 +9,11 @@ class GroupsController < ApplicationController
     
     respond_to do |wants|
       if current_user.save
-        flash[:notice] = ' was successfully created.'
+        flash[:success] = ' was successfully created.'
         wants.html { redirect_to(@group) }
         wants.xml { render :xml => @group, :status => :created, :location => @group }
       else
-        flash[:notice] = "unsuccessfully created..."
+        flash[:danger] = "unsuccessfully created..."
         wants.html { render :action => "new" }
         wants.xml { render :xml => @group.errors, :status => :unprocessable_entity }
       end
@@ -39,6 +39,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @users = @group.users.paginate(:page => params[:page],:per_page => 10)
+    @activities = @group.activities.paginate(:page => params[:page],:per_page => 10)
   
     respond_to do |format|
       format.html # show.html.erb
@@ -51,7 +52,8 @@ class GroupsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def group_params
-    final_params = params.require(:group).permit(:name, :intro,:avatar)
+    final_params = params.require(:group).permit(:name, :intro,:avatar,:avatar_cache)
     final_params[:user_id] = current_user.id
+    final_params
   end
 end

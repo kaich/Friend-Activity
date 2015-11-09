@@ -22,7 +22,24 @@
   <%= render 'applications/form' %>
 <% end %>
 
+#activity
+<table  class="activities table">
+<% for activity in @activities %>
+  <tr>
+    <td>
+     <%= link_to activity.name ,group_activity_path(@group,activity) %> 
+    </td>
+    <td>
+      <%= "Introduction: #{activity.content}" %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @activities, renderer: BootstrapPagination::Rails %>
+
+#users
 <table class="members" summary="Group members">
   <%= render @users %>
 </table>
-<%= will_paginate @users %>
+<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+

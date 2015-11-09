@@ -4,6 +4,11 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
+
+<div class="float-control">
+  <%= link_to "<i class='fa fa-plus'></i> new group".html_safe , new_group_path ,class:'btn btn-primary'%> 
+</div>
+
 <table  class="table">
 <% for group in @groups %>
   <tr>

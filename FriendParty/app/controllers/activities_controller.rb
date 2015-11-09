@@ -25,11 +25,11 @@ class ActivitiesController < ApplicationController
     
     respond_to do |wants|
       if @activity.save
-        flash[:notice] = 'activity was successfully created.'
+        flash[:success] = 'activity was successfully created.'
         wants.html { redirect_to({action: "show", id: @activity.id}) }
         wants.xml { render :xml => @activity, :status => :created, :location => @activity }
       else
-        flash[:notice] = 'activity was failed created.'
+        flash[:danger] = 'activity was failed created.'
         wants.html { render :action => "new" }
         wants.xml { render :xml => @activity.errors, :status => :unprocessable_entity }
       end

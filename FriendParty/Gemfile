@@ -59,6 +59,14 @@ gem 'carrierwave-qiniu'
 gem 'qiniu', '~> 6.2.1'
 gem 'mini_magick', '3.7.0', require: false
 
+#前端包管理rails-assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-markdown-js'
+  gem 'rails-assets-marked'
+  gem 'rails-assets-to-markdown'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

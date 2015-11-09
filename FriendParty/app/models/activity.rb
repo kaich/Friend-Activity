@@ -13,4 +13,6 @@ class Activity < ActiveRecord::Base
   has_many :participator_activities 
   has_many :participators, :through => :participator_activities ,:source => :user , :foreign_key => :participator_id
 
+  has_many :events
+
 end

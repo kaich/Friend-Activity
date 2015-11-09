@@ -1,5 +1,17 @@
 module ApplicationHelper
 
+  def alert_type(type)
+
+    alert_type = type 
+    if type.to_s == "notice"
+      alert_type = "success" 
+    elsif type.to_s == "alert"
+      alert_type = "danger"
+    end
+
+    alert_type
+  end
+
   def user_in_group?(group)
     group.users.include? current_user
   end

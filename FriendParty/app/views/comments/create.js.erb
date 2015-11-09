@@ -3,8 +3,8 @@ new_comment = '<%= j(render @comment) %>'
 comment_form = $('#new_comment')
 <% if @comment %>
   comment_box.append(new_comment) 
-  $('textarea',comment_form).val("") 
-  $(".edit").click()
+  $('textarea',comment_form).data('markdown').setContent("") 
+  $('textarea',comment_form).css({'height':$('textarea',comment_form)[0].original_height})
 <% else %>
   $('textarea',comment_form).focus() 
 <% end %>

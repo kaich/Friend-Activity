@@ -78,7 +78,7 @@
       <div class="container">
         <!--error message -->
         <% flash.each do |message_type, message| %>
-          <div class="alert alert-danger">
+          <div class=<%= "alert alert-#{alert_type(message_type)}"%>>
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <%= message %>
           </div>
