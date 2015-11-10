@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     @activity = Activity.find_by_id(params[:activity_id])
-    @events = @activity.events.paginate(:page => params[:page], :per_page => 20)
+    @events = @activity.events.order(start_time: :asc )
   
     respond_to do |format|
       format.html # index.html.erb
@@ -37,6 +37,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @activity = @event.activity
+    @group = @activity.group
   
     respond_to do |format|
       format.html # show.html.erb
@@ -63,7 +65,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name ,:content,:start_time ,:end_time,:activity_id)
+    params.require(:event).permit(:name ,:content,:start_time ,:end_time,:activity_id,:avatar,:avatar_cache)
   end
   
 end

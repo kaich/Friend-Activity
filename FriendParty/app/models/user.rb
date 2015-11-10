@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 
   has_many :owner_groups , class_name: "Group" , foreign_key: 'user_id'
 
+  has_many :tracked_activities
+  has_many :track_activities , :through => :tracked_activities, :source => :activity
 
   def like(likeable)
     self.likes << likeable 
@@ -26,5 +28,8 @@ class User < ActiveRecord::Base
     self.likes.delete likeable 
     self.save
   end
+
+
+
 
 end

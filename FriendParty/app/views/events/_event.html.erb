@@ -1,0 +1,18 @@
+<li>
+    <div class="timeline-image">
+        <%= link_to image_tag(@event.avatar_url ? @event.avatar_url : 'about/1.jpg',class:"img-circle img-responsive"), event_path(@event)%>
+    </div>
+    <div class="timeline-panel">
+        <div class="timeline-heading">
+            <h4> <%= @event.start_time %> </h4>
+            <h4 class="subheading">
+              <%= @event.name %>
+            </h4>
+        </div>
+        <div class="timeline-body">
+          <p class="text-muted">
+            <%= @event.content %>
+          </p>
+        </div>
+    </div>
+</li>

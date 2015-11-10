@@ -19,6 +19,14 @@
   <%= f.text_area :content ,class:"form-control", 'data-provide' => 'markdown' , 'rows' => '15' %>
  </div>
 
+
+  <p>
+    <label>My Avatar</label>
+    <%= image_tag(@event.avatar_url) if @event.avatar? %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </p>
+
   <%= f.submit 'Submit', :disable_with => 'Submiting...' ,class:"btn btn-primary"%>
 
 <% end %>

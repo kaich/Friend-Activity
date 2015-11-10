@@ -1,6 +1,8 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user! 
 
+  include ActivitiesHelper
+
   def index
     @group=Group.find(params[:group_id])
     @activities = @group.activities.paginate(:page => params[:page],:per_page => 20)
@@ -62,6 +64,22 @@ class ActivitiesController < ApplicationController
       format.html { redirect_to(activitys_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def track
+    @activity = Activity.find(params[:id])
+    if !tracked? @activity
+      current_user.track_activities << @activity
+      current_user.save
+    end 
+  end
+
+  def untrack
+    @activity = Activity.find(params[:id])
+    if tracked? @activity
+      current_user.track_activities.delete @activity
+      current_user.save
+    end 
   end
   
   private

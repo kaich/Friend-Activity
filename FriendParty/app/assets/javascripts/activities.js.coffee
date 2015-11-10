@@ -35,3 +35,9 @@ $ -> $('textarea[id*=comment]').on "input" , ->
     $(this).css({'height':totalHeight}) if totalHeight > this.original_height
     
 
+$ -> $('#track-item').on 'click' , ->
+  method = $(this).data('method')
+  activity_id = $(this).data('id')
+  $.ajax
+    url: "#{activity_id}/#{method}"
+    method: "PATCH"

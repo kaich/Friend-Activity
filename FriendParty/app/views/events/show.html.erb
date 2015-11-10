@@ -1,10 +1,25 @@
-<div class="table">
-  <tr>
-    <td>name</td>
-    <td>content</td>
-  </tr> 
-  <tr>
-    <td><%= @event.name%></td>
-    <td><%= @event.content%></td>
-  </tr>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= "<h4>#{@event.name}</h4>".html_safe %> 
+   <div class='star_time'>
+     <%= format_time @event.start_time %>
+   </div>
+   <div class="end_time">
+     <%= format_time @event.end_time %>
+   </div>
+  </div>
+  <div class="panel-body">
+   <%= render_markdown(@event.content).html_safe %> 
+  </div>
+  <div class="panel-footer">
+   <%= @event.user.name %> 
+  </div>
 </div>
+
+<div id="comment_box">
+  <% for @comment in @event.comments %>
+   <%= render @comment %> 
+  <% end %>
+</div>
+
+<%= render "comments/form" ,likeable: @event%>

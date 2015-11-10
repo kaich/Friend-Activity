@@ -22,6 +22,12 @@ Rails.application.routes.draw do
       collection do 
         post :preview
       end
+
+      member do 
+        patch :track
+        patch :untrack
+      end
+
       resources :events , shallow: true
       resources :comments , shallow: true
     end
