@@ -1,4 +1,7 @@
 class Activity < ActiveRecord::Base
+
+  acts_as_votable
+
   validates :name , presence: true 
   validates :content , presence: true 
   validates :originator_id , presence: true 

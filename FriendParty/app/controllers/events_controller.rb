@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  include VoteModule
+
   def index
     @activity = Activity.find_by_id(params[:activity_id])
     @events = @activity.events.order(start_time: :asc )

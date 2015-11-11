@@ -26,6 +26,10 @@ Rails.application.routes.draw do
       member do 
         patch :track
         patch :untrack
+        patch :participate
+        patch :dropout
+        patch :upvotes
+        patch :downvotes
       end
 
       resources :events , shallow: true

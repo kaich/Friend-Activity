@@ -59,6 +59,12 @@ gem 'carrierwave-qiniu'
 gem 'qiniu', '~> 6.2.1'
 gem 'mini_magick', '3.7.0', require: false
 
+#投票
+gem 'acts_as_votable', '~> 0.10.0'
+
+#图表
+gem 'lazy_high_charts'
+
 #前端包管理rails-assets
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-markdown'

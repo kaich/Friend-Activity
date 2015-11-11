@@ -8,7 +8,18 @@
      <%= format_time @activity.end_time %>
    </div>
    <%= track_tag @activity %>
-  </div>
+   <%= participate_tag @activity %>
+   
+   <div class="vote">
+      <div id="upvotes" data-id="<%= @activity.id %>">
+          <i class="fa fa-thumbs-o-up fa-2x"> <span class="badge"><%= @activity.get_upvotes.size %></span></i>
+        </div> 
+        <div id="downvotes" data-id="<%= @activity.id %>">
+          <i class="fa fa-thumbs-o-down fa-2x"> <span class="badge"><%= @activity.get_downvotes.size %></span></i>
+        </div>
+      </div>
+   </div>
+
   <div class="panel-body">
    <%= render_markdown(@activity.content).html_safe %> 
   </div>
@@ -20,6 +31,11 @@
 <div class="float-control">
   <%= link_to "<i class='fa fa-plus'></i> events".html_safe , group_activity_events_path(@group,@activity) ,class:'btn btn-primary'%> 
 </div>
+
+<%= high_chart("my_id4", @chart) do |c| %>
+    <%= raw "options.tooltip.formatter = function() {return '<b> YUPI!! '+ this.point.name +'</b>: '+ this.y +' %';}"  %>
+    <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+<% end %>
 
 
 <div id="comment_box">

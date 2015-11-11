@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  acts_as_voter
+
   has_and_belongs_to_many :groups
   has_many :applications
   has_many :comments
@@ -29,7 +31,8 @@ class User < ActiveRecord::Base
     self.save
   end
 
-
-
+  def participate?(activity)
+    self.participant_activities.include? activity
+  end
 
 end

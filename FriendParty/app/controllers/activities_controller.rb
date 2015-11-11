@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user! 
 
   include ActivitiesHelper
+  include VoteModule
 
   def index
     @group=Group.find(params[:group_id])
@@ -41,6 +42,7 @@ class ActivitiesController < ApplicationController
   def show
     @group=Group.find(params[:group_id])
     @activity = Activity.find(params[:id])
+    generate_chart(@activity,@activity.group.users.count)
   
     respond_to do |format|
       format.html # show.html.erb
@@ -81,6 +83,24 @@ class ActivitiesController < ApplicationController
       current_user.save
     end 
   end
+
+  def participate
+    @activity = Activity.find(params[:id])
+    if participate? @activity 
+      current_user.participant_activities << @activity
+      current_user.save
+    end
+  end
+
+  def dropout
+    @activity = Activity.find(params[:id])
+    if participate? @activity 
+      current_user.participant_activities.delete @activity
+      current_user.save
+    end
+  end
+
+
   
   private
 
@@ -90,4 +110,6 @@ class ActivitiesController < ApplicationController
    final_params[:group_id] = params[:group_id]
    return final_params
   end
+
+
 end

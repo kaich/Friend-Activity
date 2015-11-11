@@ -22,7 +22,7 @@
   <%= render 'applications/form' %>
 <% end %>
 
-#activity
+<%#activity%>
 <table  class="activities table">
 <% for activity in @activities %>
   <tr>
@@ -37,7 +37,7 @@
 </table>
 <%= will_paginate @activities, renderer: BootstrapPagination::Rails %>
 
-#users
+<%##users%>
 <table class="members" summary="Group members">
   <%= render @users %>
 </table>

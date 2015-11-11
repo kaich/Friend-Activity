@@ -41,3 +41,22 @@ $ -> $('#track-item').on 'click' , ->
   $.ajax
     url: "#{activity_id}/#{method}"
     method: "PATCH"
+
+$ -> $('#participate-item').on 'click', ->
+  method = $(this).data('method')
+  activity_id = $(this).data('id')
+  $.ajax
+    url: "#{activity_id}/#{method}"
+    method: "PATCH"
+
+$ -> $('#upvotes').on 'click', ->
+  activity_id = $(this).data('id')
+  $.ajax
+    url: "#{activity_id}/upvotes"
+    method: "PATCH"
+
+$ -> $('#downvotes').on 'click', ->
+  activity_id = $(this).data('id')
+  $.ajax
+    url: "#{activity_id}/downvotes"
+    method: "PATCH"
