@@ -1,5 +1,5 @@
 <!-- Portfolio Modal 1 -->
-<div class="portfolio-modal modal fade" id=<%="portfolioModal#{like.id}"%> tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id=<%="portfolioModal#{favorite.id}"%> tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
             <div class="lr">
@@ -12,18 +12,18 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
                         <!-- Project Details Go Here -->
-                        <h2> <%= like.likeable.name %></h2>
+                        <h2> <%= favorite.favoritable.name %></h2>
                         <p class="item-intro text-muted"></p>
-                        <%= like.likeable.try(:avatar).nil? ? image_tag(like.likeable.avatar_url, class:"img-responsive") : image_tag("portfolio/roundicons.png",class:"img-responsive")  %>
-                        <p> <%= like.likeable.intro %> </p>
+                        <%= favorite.favoritable.try(:avatar).nil? ? image_tag(favorite.favoritable.avatar_url, class:"img-responsive") : image_tag("portfolio/roundicons.png",class:"img-responsive")  %>
+                        <p> <%= favorite.favoritable.intro %> </p>
                         <p>
                             <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
                         <ul class="list-inline">
-                            <li>Date: <%= like.likeable.created_at %></li>
-                            <li>Client: <%= like.likeable.owner.name %></li>
-                            <li>Category: <%= like.likeable.users.count %></li>
+                            <li>Date: <%= favorite.favoritable.created_at %></li>
+                            <li>Client: <%= favorite.favoritable.owner.name %></li>
+                            <li>Category: <%= favorite.favoritable.users.count %></li>
                         </ul>
-                        <%= link_to "detail" ,like.likeable , class:'btn btn-primary'%>
+                        <%= link_to "detail" ,favorite.favoritable , class:'btn btn-primary'%>
                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                     </div>
                 </div>

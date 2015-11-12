@@ -3,7 +3,9 @@ module VoteModule
 
   #vote
   def upvotes
+    @group=Group.find(params[:group_id])
     @activity = Activity.find(params[:id])
+    generate_chart(@activity,@activity.group.users.count)
     if !current_user.voted_up_for? @activity
       current_user.upvotes @activity
       current_user.save
@@ -11,7 +13,9 @@ module VoteModule
   end
 
   def downvotes
+    @group=Group.find(params[:group_id])
     @activity = Activity.find(params[:id])
+    generate_chart(@activity,@activity.group.users.count)
     if current_user.voted_up_for? @activity
       current_user.downvotes @activity
       current_user.save

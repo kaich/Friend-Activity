@@ -59,6 +59,16 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.string   "avatar"
   end
 
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "favoritable_id"
+    t.string   "favoritable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["favoritable_id", "favoritable_type"], name: "index_favorites_on_favoritable_id_and_favoritable_type", unique: true
+
   create_table "groups", force: true do |t|
     t.string   "name"
     t.text     "intro"
@@ -74,16 +84,6 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "likes", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "likeable_id"
-    t.string   "likeable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", unique: true
 
   create_table "participator_activities", force: true do |t|
     t.integer  "user_id"

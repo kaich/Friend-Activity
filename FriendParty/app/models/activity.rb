@@ -11,7 +11,7 @@ class Activity < ActiveRecord::Base
   belongs_to :originator , class_name: :User , foreign_key: :originator_id
 
   has_many :comments , as: :commentable
-  has_many :likes , as: :likeable
+  has_many :favorites , as: :favoritable
 
   has_many :participator_activities 
   has_many :participators, :through => :participator_activities ,:source => :user , :foreign_key => :participator_id

@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="timeline">
-                  <% for @event in current_user.track_activities.first.events %>
+                  <% for @event in track_activity_event %>
                     <%= render @event %>
                   <% end %> 
                 </ul>

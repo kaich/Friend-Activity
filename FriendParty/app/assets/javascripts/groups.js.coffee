@@ -3,17 +3,17 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$ -> $("#likeable").on 'click' , (e) ->
+$ -> $("#favoritable").on 'click' , (e) ->
   $el = $(e.currentTarget)
-  likeable_id = $el.data("id")
-  likeable_type = $el.data("type")
-  likeable_method =$el.data("method")
-  if likeable_method == "post"
-    $.post "/likes" ,{type: likeable_type,id: likeable_id}
+  favoritable_id = $el.data("id")
+  favoritable_type = $el.data("type")
+  favoritable_method =$el.data("method")
+  if favoritable_method == "post"
+    $.post "/favorites" ,{type: favoritable_type,id: favoritable_id}
   else
     $.ajax
-      url: "/likes"
+      url: "/favorites"
       method: "DELETE"
-      data: {type: likeable_type,id:likeable_id}
+      data: {type: favoritable_type,id:favoritable_id}
   false
 

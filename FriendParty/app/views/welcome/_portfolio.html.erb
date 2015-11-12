@@ -8,8 +8,8 @@
             </div>
         </div>
         <div class="row">
-          <% for like in current_user.likes %>
-            <%= render  like %> 
+          <% for favorite in current_user.favorites %>
+            <%= render  favorite %> 
           <% end %>
         </div>
     </div>

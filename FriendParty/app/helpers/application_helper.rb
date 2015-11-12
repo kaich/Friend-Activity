@@ -29,16 +29,27 @@ module ApplicationHelper
     time.strftime "%Y-%m-%d %H:%M"
   end
 
-  #create like button
-  def like_tag(likeable)
-    method = likeable.like.try(:liked_by_user?,current_user) ? "delete" :"post"
-    div = content_tag("div",like_icon_tag(likeable),{"class" => "likeable btn btn-primary", "data-method" => "#{method}", "data-type" => "#{controller_name}" , "data-id" => "#{likeable.id}" , "id" => "likeable"})  
+  #create favorite button
+  def favorite_tag(favoritable)
+    method = favoritable.favorite.try(:favorite_by_user?,current_user) ? "delete" :"post"
+    div = content_tag("div",favorite_icon_tag(favoritable),{"class" => "favoritable btn btn-primary", "data-method" => "#{method}", "data-type" => "#{controller_name}" , "data-id" => "#{favoritable.id}" , "id" => "favoritable"})  
     div
   end
 
-  def like_icon_tag(likeable)
-    class_content = likeable.try(:like).try(:liked_by_user?,current_user) ?  'fa fa-heart fa-2x' : 'fa fa-heart-o fa-2x'
+  def favorite_icon_tag(favoritable)
+    class_content = favoritable.try(:favorite).try(:favorite_by_user?,current_user) ?  'fa fa-heart fa-2x' : 'fa fa-heart-o fa-2x'
    "<i class='#{class_content}'></i>".html_safe
+  end
+
+  #track activity event
+  def track_activity_event
+    events = []
+    last_activity = current_user.track_activities.last
+    if last_activity 
+      events = last_activity.events
+    end
+
+    events
   end
 
 end

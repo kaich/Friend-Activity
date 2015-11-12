@@ -32,10 +32,9 @@
   <%= link_to "<i class='fa fa-plus'></i> events".html_safe , group_activity_events_path(@group,@activity) ,class:'btn btn-primary'%> 
 </div>
 
-<%= high_chart("my_id4", @chart) do |c| %>
-    <%= raw "options.tooltip.formatter = function() {return '<b> YUPI!! '+ this.point.name +'</b>: '+ this.y +' %';}"  %>
-    <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
-<% end %>
+<div id="generate-chart" >
+  <%= render "generate_chart" %>
+</div>
 
 
 <div id="comment_box">

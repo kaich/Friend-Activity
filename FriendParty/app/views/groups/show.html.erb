@@ -8,7 +8,7 @@
     <div class="group_avatar">
       <%= image_tag(@group.avatar_url) if @group.avatar? %>  
     </div>
-   <%= like_tag @group %>
+   <%= favorite_tag @group %>
    <%= @group.intro %>
   </div>
   <div class="panel-footer">

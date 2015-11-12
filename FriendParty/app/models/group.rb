@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
 
    has_many :applications
    has_many :activities
-   has_one :like , as: :likeable
+   has_one :favorite , as: :favoritable
    belongs_to :owner , class_name: "User", foreign_key: "user_id"
 
    mount_uploader :avatar, AvatarUploader
