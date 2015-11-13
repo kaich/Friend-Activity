@@ -10,15 +10,7 @@
    <%= track_tag @activity %>
    <%= participate_tag @activity %>
    
-   <div class="vote">
-      <div id="upvotes" data-id="<%= @activity.id %>">
-          <i class="fa fa-thumbs-o-up fa-2x"> <span class="badge"><%= @activity.get_upvotes.size %></span></i>
-        </div> 
-        <div id="downvotes" data-id="<%= @activity.id %>">
-          <i class="fa fa-thumbs-o-down fa-2x"> <span class="badge"><%= @activity.get_downvotes.size %></span></i>
-        </div>
-      </div>
-   </div>
+   <%= render "shared/vote_control" %>
 
   <div class="panel-body">
    <%= render_markdown(@activity.content).html_safe %> 
@@ -30,10 +22,12 @@
 
 <div class="float-control">
   <%= link_to "<i class='fa fa-plus'></i> events".html_safe , group_activity_events_path(@group,@activity) ,class:'btn btn-primary'%> 
+  <br>
+  <%= link_to "<i class='fa fa-plus'></i> new event".html_safe , new_group_activity_event_path(@group,@activity) ,class:'btn btn-primary'%> 
 </div>
 
 <div id="generate-chart" >
-  <%= render "generate_chart" %>
+  <%= render "shared/generate_chart" %>
 </div>
 
 

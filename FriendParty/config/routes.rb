@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resource :favorites 
     
 
+
   resources :groups do 
     collection do
       get :search , :action => "search" , :as => "search"
@@ -32,11 +33,16 @@ Rails.application.routes.draw do
         patch :downvotes
       end
 
-      resources :events , shallow: true
+      resources :events , shallow: true 
       resources :comments , shallow: true
     end
   end
 
+
+  resources :events do 
+    patch :upvotes
+    patch :downvotes
+  end
 
   get 'markdown' => 'home#markdown', as: 'markdown'
 

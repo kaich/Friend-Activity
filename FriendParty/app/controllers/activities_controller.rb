@@ -42,6 +42,7 @@ class ActivitiesController < ApplicationController
   def show
     @group=Group.find(params[:group_id])
     @activity = Activity.find(params[:id])
+    @voteable = @activity
     generate_chart(@activity,@activity.group.users.count)
   
     respond_to do |format|

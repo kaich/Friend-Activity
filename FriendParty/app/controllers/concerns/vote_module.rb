@@ -3,22 +3,22 @@ module VoteModule
 
   #vote
   def upvotes
-    @group=Group.find(params[:group_id])
-    @activity = Activity.find(params[:id])
-    generate_chart(@activity,@activity.group.users.count)
-    if !current_user.voted_up_for? @activity
-      current_user.upvotes @activity
-      current_user.save
+    @voteable = controller_name.classify.constantize.find(params[:id])
+    if !current_user.voted_up_for? @voteable
+      current_user.upvotes @voteable
+      if current_user.save
+        generate_chart(@voteable,@group.users.count)
+      end
     end
   end
 
   def downvotes
-    @group=Group.find(params[:group_id])
-    @activity = Activity.find(params[:id])
-    generate_chart(@activity,@activity.group.users.count)
-    if current_user.voted_up_for? @activity
-      current_user.downvotes @activity
-      current_user.save
+    @voteable = controller_name.classify.constantize.find(params[:id])
+    if current_user.voted_up_for? @voteable
+      current_user.downvotes @voteable
+      if current_user.save
+        generate_chart(@voteable,@group.users.count)
+      end 
     end
   end
 
@@ -39,7 +39,7 @@ module VoteModule
                  :type=> 'pie',
                  :name=> 'vote statistics',
                  :data=> [
-                    ['downvote',       down_rate],
+                    ['downvote', down_rate],
                     {
                        :name=> 'upvote',    
                        :y=> up_rate,
@@ -49,6 +49,7 @@ module VoteModule
                     ['Others',   rest_rate]
                  ]
         }
+        f.colors(["red","green","blue"]);
         f.series(series)
         f.options[:title][:text] = "THA PIE"
         f.legend(:layout=> 'vertical',:style=> {:left=> 'auto', :bottom=> 'auto',:right=> '50px',:top=> '100px'}) 

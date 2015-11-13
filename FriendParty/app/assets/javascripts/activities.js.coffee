@@ -54,9 +54,13 @@ $ -> $('#upvotes').on 'click', ->
   $.ajax
     url: "#{activity_id}/upvotes"
     method: "PATCH"
+    data:
+      id: activity_id
 
 $ -> $('#downvotes').on 'click', ->
   activity_id = $(this).data('id')
   $.ajax
     url: "#{activity_id}/downvotes"
     method: "PATCH"
+    data:
+      id: activity_id

@@ -24,6 +24,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.activity = Activity.find(params[:activity_id])
     
     respond_to do |wants|
       if @event.save
@@ -42,7 +43,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @activity = @event.activity
     @group = @activity.group
-  
+    @voteable = @event
+    generate_chart(@activity,@activity.group.users.count)
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render xml: @event }
@@ -68,7 +71,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name ,:content,:start_time ,:end_time,:activity_id,:avatar,:avatar_cache)
+    params.require(:event).permit(:name ,:content,:start_time ,:end_time,:avatar,:avatar_cache)
   end
   
 end

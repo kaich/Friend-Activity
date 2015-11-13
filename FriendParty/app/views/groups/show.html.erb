@@ -16,6 +16,11 @@
   </div>
 </div>
 
+
+<div class="float-control">
+  <%= link_to "<i class='fa fa-plus'></i> new activity".html_safe , new_group_activity_path(@group) ,class:'btn btn-primary'%> 
+</div>
+
 <%= render @group.applications %>
 
 <% if !user_in_group? @group %>
