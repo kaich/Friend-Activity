@@ -9,6 +9,7 @@ module VoteModule
       if current_user.save
         generate_chart(@voteable,@group.users.count)
       end
+      debugger
     end
   end
 
