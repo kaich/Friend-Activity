@@ -4,18 +4,19 @@ module VoteModule
   #vote
   def upvotes
     @voteable = controller_name.classify.constantize.find(params[:id])
+    @group = Group.find(params[:group_id])
     if !current_user.voted_up_for? @voteable
       current_user.upvotes @voteable
       if current_user.save
         generate_chart(@voteable,@group.users.count)
       end
-      debugger
     end
   end
 
   def downvotes
     @voteable = controller_name.classify.constantize.find(params[:id])
-    if current_user.voted_up_for? @voteable
+    @group = Group.find(params[:group_id])
+    if !current_user.voted_down_for? @voteable
       current_user.downvotes @voteable
       if current_user.save
         generate_chart(@voteable,@group.users.count)
@@ -35,7 +36,7 @@ module VoteModule
 
 
       @chart = LazyHighCharts::HighChart.new('pie') do |f|
-        f.chart({:defaultSeriesType=>"pie" , :margin=> [50, 200, 60, 170]} )
+        f.chart({:defaultSeriesType=>"pie" , :margin=> [50, 200, 60, 170]})
         series = {
                  :type=> 'pie',
                  :name=> 'vote statistics',

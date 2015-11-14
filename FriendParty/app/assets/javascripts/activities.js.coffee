@@ -51,16 +51,20 @@ $ -> $('#participate-item').on 'click', ->
 
 $ -> $('#upvotes').on 'click', ->
   activity_id = $(this).data('id')
+  group_id = $(this).data('groupid')
   $.ajax
     url: "#{activity_id}/upvotes"
     method: "PATCH"
     data:
       id: activity_id
+      group_id: group_id
 
 $ -> $('#downvotes').on 'click', ->
   activity_id = $(this).data('id')
+  group_id = $(this).data('groupid')
   $.ajax
     url: "#{activity_id}/downvotes"
     method: "PATCH"
     data:
       id: activity_id
+      group_id: group_id
