@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+#not use member , params[:event_id] rather than params[:id]
   resources :events do 
     patch :upvotes
     patch :downvotes

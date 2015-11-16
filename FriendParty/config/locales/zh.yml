@@ -27,3 +27,23 @@ zh:
       - :year
       - :month
       - :day
+
+  service: "服务"
+  favorite: "喜爱"
+  track: "我的关注"
+  team: "团队"
+  contact: "联系"
+  user: "用户"
+
+  search_descript: "这里包含了所有的已存在的群组，你可以尽情浏览搜索它们，然后选择你感兴趣的去申请加入它。"
+  group_descript:  "这里包含了所有你已经加入的群组，你可以浏览相关信息，当然你也可以创建修或者修改它们。"
+  help_descript:   "这里是关于本站的帮助，由于使用的是Markdown语言，你应该了解它们，那会帮助你键指如飞。"
+
+  favorite_descript: "你喜欢的群组，感兴趣的，才是对的"
+  track_descript:    "你关注的活动，时刻为您呈现最新动态"
+
+  member:  "成员"
+  wait_for_you: "等待你的加入"
+  member_descript: "由于开发仅有目前仅由一个人在进行，服务器域名资费也是私人出，导致进度有些慢，界面有些丑，bug在所难免。如果想尽快获得好的体验，期待你的加入或者你指出问题和改进之处。"
+
+  source_intro: "项目源码:"
