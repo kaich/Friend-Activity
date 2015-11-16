@@ -69,4 +69,3 @@ zh:
   password_mininum:  '最少%{num}位'
   Send_me_reset_password_instructions: "发送重置密码请求"
   account: "账户"
-  logout: "登出"
