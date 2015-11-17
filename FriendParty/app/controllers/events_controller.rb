@@ -44,7 +44,7 @@ class EventsController < ApplicationController
     @activity = @event.activity
     @group = @activity.group
     @voteable = @event
-    generate_chart(@activity,@activity.group.users.count)
+    generate_chart(@event,@activity.group.users.count)
 
     respond_to do |format|
       format.html # show.html.erb

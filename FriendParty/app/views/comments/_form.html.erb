@@ -2,10 +2,10 @@
   <%= form_for [@group , @activity, if @activity.nil? then Comment.new  else @activity.comments.build end], remote: true do |f| %>
 
     <div class="form-group" id="content">
-      <%= f.label :content, 'content' %>
+      <%= f.label :content, t(:comment_content) %>
       <%= f.text_area :content, class:"form-control" , "data-provide" => "markdown" , "rows" => "10" %>
     </div>
 
-    <%= f.submit 'Submit',:class=>"btn", :disable_with => 'Submiting...' %>
+    <%= f.submit t(:create_comment),:class=>"btn btn-primary", :disable_with => 'Submiting...' %>
   <% end %>
 </div>

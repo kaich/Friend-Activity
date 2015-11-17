@@ -1,31 +1,31 @@
 <%= form_for @event, url:group_activity_events_path do |f| %>
  <div class="form-group">
-  <%= f.label :name %> 
+  <%= f.label :name ,t(:event_name)%> 
   <%= f.text_field :name ,class:"form-control"%>
  </div> 
 
   <div class="form-group datepicker">
-    <%= f.label :startime, 'starttime' %>
+    <%= f.label :startime, t(:startime) %>
     <%= f.text_field :start_time,class:"form-control datepicker"%> 
   </div>
 
   <div class="form-group datepicker">
-    <%= f.label :endtime, 'endtime' %>
+    <%= f.label :endtime, t(:endtime) %>
     <%= f.text_field :end_time,class:"form-control datepicker"%> 
   </div>
   
   <div class="form-group">
-  <%= f.label :content %> 
+  <%= f.label :content ,t(:event_content)%> 
   <%= f.text_area :content ,class:"form-control", 'data-provide' => 'markdown' , 'rows' => '15' %>
  </div>
 
   <p>
-    <label>My Avatar</label>
+    <label> <%= t(:event_avatar) %></label>
     <%= image_tag(@event.avatar_url) if @event.avatar? %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
   </p>
 
-  <%= f.submit 'Submit', :disable_with => 'Submiting...' ,class:"btn btn-primary"%>
+  <%= f.submit t(:create_event), :disable_with => 'Submiting...' ,class:"btn btn-primary"%>
 
 <% end %>

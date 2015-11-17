@@ -1,9 +1,8 @@
-<div class="vote">
-   <div id="upvotes" data-id="<%= @voteable.id %>" data-groupid=<%= @group.id %>>
-       <i class="fa fa-thumbs-o-up fa-2x"> <span class="badge"><%= @voteable.get_upvotes.size %></span></i>
-     </div> 
-     <div id="downvotes" data-id="<%= @voteable.id %>" data-groupid=<%= @group.id %>>
-       <i class="fa fa-thumbs-o-down fa-2x"> <span class="badge"><%= @voteable.get_downvotes.size %></span></i>
-     </div>
+<div class="vote btn-group">
+   <div id="upvotes" data-id="<%= @voteable.id %>" data-groupid=<%= @group.id  %> class="btn">
+     <i class="fa fa-thumbs-o-up fa-2x">  <span class="vote-text"><%= t :upvote %></span> <span class="badge"><%= @voteable.get_upvotes.size %></span></i>
+   </div> 
+   <div id="downvotes" data-id="<%= @voteable.id %>" data-groupid=<%= @group.id %> class="btn">
+     <i class="fa fa-thumbs-o-down fa-2x"> <span class="vote-text"> <%= t :downvote %></span> <span class="badge"><%= @voteable.get_downvotes.size %></span></i>
    </div>
 </div>

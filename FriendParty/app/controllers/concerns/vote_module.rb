@@ -36,24 +36,24 @@ module VoteModule
 
 
       @chart = LazyHighCharts::HighChart.new('pie') do |f|
-        f.chart({:defaultSeriesType=>"pie" , :margin=> [50, 200, 60, 170]})
+        f.chart({:defaultSeriesType=>"pie"})
         series = {
                  :type=> 'pie',
                  :name=> 'vote statistics',
                  :data=> [
-                    ['downvote', down_rate],
+                    [t(:downvote), down_rate],
                     {
-                       :name=> 'upvote',    
+                       :name=> t(:upvote),    
                        :y=> up_rate,
                        :sliced=> true,
                        :selected=> true
                     },
-                    ['Others',   rest_rate]
+                    [t(:others),   rest_rate]
                  ]
         }
         f.colors(["red","green","blue"]);
         f.series(series)
-        f.options[:title][:text] = "THA PIE"
+        f.options[:title][:text] = t(:event_vote_chart_title)
         f.legend(:layout=> 'vertical',:style=> {:left=> 'auto', :bottom=> 'auto',:right=> '50px',:top=> '100px'}) 
         f.plot_options(:pie=>{
           :allowPointSelect=>true, 

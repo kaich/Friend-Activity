@@ -1,3 +1,3 @@
-$("div#downvotes > i > span").text( <%= @voteable.get_downvotes.size %> )
-$("div#upvotes > i > span").text( <%= @voteable.get_upvotes.size %> )
+$("div#downvotes > i > span.badge").text( <%= @voteable.get_downvotes.size %> )
+$("div#upvotes > i > span.badge").text( <%= @voteable.get_upvotes.size %> )
 $("#generate-chart").html("<%= escape_javascript(render partial: '/shared/generate_chart') %>")

@@ -1,0 +1,35 @@
+<div class="sidebar hidden-mobile col-md-3">
+  
+  <div id="side-bar">
+    <div class="panel panel-default" >
+      <div class="panel-body">
+
+        <%= render "shared/vote_control" %>
+
+        <div id="generate-chart" >
+          <%= render "shared/generate_chart" %>
+        </div>
+
+        <% if controller_name == "activities" %>
+          
+          <div class="btn-group" id="activity-action">
+            
+             <%= track_tag @activity %>
+             <%= participate_tag @activity %>
+
+          </div>
+
+          <div class="btn-group-vertical" id="activity-function">
+            
+              <%= link_to "<i class='fa fa-plus'></i> #{t :event_index}".html_safe , group_activity_events_path(@group,@activity) ,class:'btn btn-primary'%> 
+              <%= link_to "<i class='fa fa-plus'></i> #{t :new_event}".html_safe , new_group_activity_event_path(@group,@activity) ,class:'btn btn-primary'%> 
+
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>

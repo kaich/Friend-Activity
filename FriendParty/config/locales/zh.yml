@@ -32,7 +32,7 @@ zh:
 
   service: "服务"
   favorite: "喜爱"
-  track: "我的关注"
+  track: "关注"
   team: "团队"
   contact: "联系"
   user: "用户"
@@ -70,3 +70,34 @@ zh:
   Send_me_reset_password_instructions: "发送重置密码请求"
   account: "账户"
   logout: "登出"
+
+  search_placeholder: "请输入你要搜索的群组名称"
+  new_group: "创建新群"
+  create_group: "创建"
+  new_activity: "创建新活动"
+  group_name: "群名称"
+  group_intro: "群介绍"
+  group_avatar: "群图像"
+
+  new_event: "新建事件"
+  event_index: "事件列表"
+
+  event_name: "名称"
+  startime:  "开始时间"
+  endtime:   "结束时间"
+  event_content:  "具体内容"
+  event_avatar: "事件图像"
+  create_event: "创建"
+  event_vote_chart_title: "事件参入投票统计"
+  
+  create_comment: "提交评论"
+  comment_content: "添加评论"
+
+  upvote: "赞成"
+  downvote: "反对"
+  others: "其他"
+
+  participate: "加入"
+  dropout:     "退出"
+  
+  untrack: "取消关注"

@@ -22,3 +22,40 @@
 div.datepicker {
   position: relative;
 }
+
+#side-bar {
+  position: fixed;
+  width: 260px;
+
+  #vote_chart {
+    width: 150px;
+    height: 200px;
+    margin: auto;
+  }
+
+  div#activity-action  {
+    width: 100%;
+
+    .btn {
+      width: 50%;
+      margin: auto;
+    }
+  }
+
+  div#activity-function {
+    width: 100%;
+    margin-top: 20px;
+    .btn {
+      margin: 5px 0;
+    }
+  }
+}
+
+span.vote-text , span.i-text {
+  font-size: 14px;
+  position: relative;
+  top: -4px;
+
+}
+
+

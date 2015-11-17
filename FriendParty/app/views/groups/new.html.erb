@@ -1,22 +1,22 @@
 <%= form_for(@group ,html: { multipart: true }) do |f| %>
  <div class="form-group">
-  <%= f.label :name  %> 
+  <%= f.label :name ,t(:group_name) %> 
   <%= f.text_field :name ,autofocus: true , class:"form-control" %>
  </div> 
 
  <div class="form-group">
-  <%= f.label :intro %> 
+  <%= f.label :intro , t(:group_intro) %> 
   <%= f.text_area :intro ,autofocus: true , class:"form-control" ,"data-provide" => "markdown" , "rows" => "15"%>
  </div>
 
 
 <p>
-  <label>My Avatar</label>
+  <label> <%= t :group_avatar %></label>
   <%= image_tag(@group.avatar_url) if @group.avatar? %>
   <%= f.file_field :avatar %>
   <%= f.hidden_field :avatar_cache %>
 </p>
 
- <%= f.submit 'Create' , class:"btn btn-primary col-md-12"%>
+ <%= f.submit t(:create_group) , class:"btn btn-primary col-md-12"%>
 <% end %>
 

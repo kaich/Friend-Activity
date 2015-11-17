@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     
 
 
-  resources :groups do 
+  resources :groups  ,except: :destroy do 
     collection do
       get :search , :action => "search" , :as => "search"
     end
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :activities do
+    resources :activities ,except: :destroy do
       collection do 
         post :preview
       end
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
 
 #not use member , params[:event_id] rather than params[:id]
-  resources :events do 
+  resources :events ,except: :destroy do 
     patch :upvotes
     patch :downvotes
   end

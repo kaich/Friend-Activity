@@ -1,40 +1,37 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <%= "<h4>#{@activity.name}</h4>".html_safe %> 
-   <div class='star_time'>
-     <%= format_time @activity.start_time %>
-   </div>
-   <div class="end_time">
-     <%= format_time @activity.end_time %>
-   </div>
-   <%= track_tag @activity %>
-   <%= participate_tag @activity %>
-   
-   <%= render "shared/vote_control" %>
+<div class="col-md-9">
 
-  <div class="panel-body">
-   <%= render_markdown(@activity.content).html_safe %> 
+  <div class="panel panel-default">
+
+    <div class="panel-heading">
+      <%= "<h4>#{@activity.name}</h4>".html_safe %> 
+     <div class='star_time'>
+       <%= format_time @activity.start_time %>
+     </div>
+     <div class="end_time">
+       <%= format_time @activity.end_time %>
+     </div>
+
   </div>
-  <div class="panel-footer">
-   <%= @activity.originator.name %> 
+
+    <div class="panel-body">
+     <%= render_markdown(@activity.content).html_safe %> 
+    </div>
+    <div class="panel-footer">
+     <%= @activity.originator.name %> 
+    </div>
   </div>
+
+
+
+  <div id="comment_box">
+    <% for @comment in @activity.comments %>
+     <%= render @comment %> 
+    <% end %>
+  </div>
+
+  <%= render "comments/form" %>
+
 </div>
 
-<div class="float-control">
-  <%= link_to "<i class='fa fa-plus'></i> events".html_safe , group_activity_events_path(@group,@activity) ,class:'btn btn-primary'%> 
-  <br>
-  <%= link_to "<i class='fa fa-plus'></i> new event".html_safe , new_group_activity_event_path(@group,@activity) ,class:'btn btn-primary'%> 
-</div>
 
-<div id="generate-chart" >
-  <%= render "shared/generate_chart" %>
-</div>
-
-
-<div id="comment_box">
-  <% for @comment in @activity.comments %>
-   <%= render @comment %> 
-  <% end %>
-</div>
-
-<%= render "comments/form" %>
+<%= render "shared/sidebar" %>

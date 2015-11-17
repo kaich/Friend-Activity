@@ -6,6 +6,8 @@ $ -> $('.datepicker').datetimepicker({format: 'MMMM Do YYYY, h:mm'})
 
 $ -> $("<div id='preview' class='markdown'></div>").insertAfter( $('#content') ).hide()
 
+#$ -> $("[data-provide=markdown]").markdown({language: 'zh'})
+
 $ -> $('.preview').click (e) ->
   $(e.target).parent().addClass('active')
   $('.edit a').parent().removeClass('active')
