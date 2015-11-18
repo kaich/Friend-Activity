@@ -18,7 +18,6 @@
 //= require bootstrap-datetimepicker
 //= require gritter
 //= require bootstrap-markdown
-//= require bootstrap-markdown.zh.js
 //= require markdown-js/dist/markdown.js
 //= require marked
 //= require to-markdown

@@ -51,6 +51,12 @@ div.datepicker {
   }
 }
 
+@media (max-width: 480px) {
+    .hidden-mobile {
+        display:none !important
+}
+}
+
 span.vote-text , span.i-text {
   font-size: 14px;
   position: relative;
