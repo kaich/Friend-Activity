@@ -73,6 +73,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-to-markdown'
 end
 
+#部署
+gem 'capistrano-rails', :group => :development
+gem 'capistrano-passenger', :group => :development
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
