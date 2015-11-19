@@ -116,6 +116,7 @@ GEM
     momentjs-rails (2.10.6)
       railties (>= 3.1)
     multi_json (1.11.2)
+    mysql2 (0.3.19)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.1)
@@ -230,6 +231,7 @@ DEPENDENCIES
   lazy_high_charts
   mini_magick (= 3.7.0)
   momentjs-rails (>= 2.9.0)
+  mysql2
   qiniu (~> 6.2.1)
   rails (= 4.1.8)
   redcarpet
