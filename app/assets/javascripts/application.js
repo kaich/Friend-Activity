@@ -17,10 +17,11 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require gritter
+//= require highcharts/highcharts
+//= require highcharts/highcharts-more
+//  Bower packages
 //= require bootstrap-markdown
 //= require markdown-js/dist/markdown.js
 //= require marked
 //= require to-markdown
-//= require highcharts/highcharts
-//= require highcharts/highcharts-more
 //= require_tree .
