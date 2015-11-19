@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-#source 'https://ruby.taobao.org'
+#source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -65,13 +65,16 @@ gem 'acts_as_votable', '~> 0.10.0'
 #图表
 gem 'lazy_high_charts'
 
-#前端包管理rails-assets
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap-markdown'
-  gem 'rails-assets-markdown-js'
-  gem 'rails-assets-marked'
-  gem 'rails-assets-to-markdown'
-end
+#前端包管理rails-assets （部署时候服务器崩溃)
+#source 'https://rails-assets.org' do
+  #gem 'rails-assets-bootstrap-markdown'
+  #gem 'rails-assets-markdown-js'
+  #gem 'rails-assets-marked'
+  #gem 'rails-assets-to-markdown'
+#end
+
+#前端包管理bower-rails
+gem "bower-rails", "~> 0.10.0"
 
 #部署
 gem 'capistrano-rails', :group => :development
