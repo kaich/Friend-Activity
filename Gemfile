@@ -1,5 +1,5 @@
-#source 'https://rubygems.org'
-source 'https://ruby.taobao.org'
+source 'https://rubygems.org'
+#source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -76,6 +76,7 @@ end
 #部署
 gem 'capistrano-rails', :group => :development
 gem 'capistrano-passenger', :group => :development
+gem 'capistrano-rvm', :group => :development
 
 # Use unicorn as the app server
 # gem 'unicorn'
