@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'FriendParty'
-set :repo_url, 'git@github.com/kaich/Friend-Activity.git'
+set :repo_url, 'git@github.com:kaich/Friend-Activity.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
