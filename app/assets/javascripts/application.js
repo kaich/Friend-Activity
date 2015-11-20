@@ -19,9 +19,8 @@
 //= require gritter
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
-//  Bower packages
 //= require bootstrap-markdown
-//= require markdown-js/dist/markdown.js
+//= require markdown-js
 //= require marked
 //= require to-markdown
 //= require_tree .
