@@ -30,7 +30,7 @@
     "type": "git",
     "url": "git://github.com/evilstreak/markdown-js.git"
   },
-  "main": "./lib/index.js",
+  "main": "./dist/markdown.min.js",
   "bin": {
     "md2html": "./bin/md2html.js"
   },

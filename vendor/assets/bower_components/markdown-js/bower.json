@@ -7,7 +7,7 @@
     "Ash Berlin <ash_markdownjs@firemirror.com> (http://ashberlin.com)"
   ],
   "description": "A sensible Markdown parser for javascript (Bower installable)",
-  "main": "./dist/markdown.js",
+  "main": "./dist/markdown.min.js",
   "keywords": [
     "markdown",
     "text processing",
