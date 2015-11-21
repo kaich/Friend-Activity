@@ -9,11 +9,18 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <ul class="timeline">
-                  <% for @event in track_activity_event %>
-                    <%= render @event %>
-                  <% end %> 
-                </ul>
+                  <% if track_activity_event.count > 0 %>
+                    <ul class="timeline">
+                      <% for @event in track_activity_event %>
+                        <%= render @event %>
+                      <% end %> 
+                    </ul>
+                  <% else %>
+                    <div class="none-event">
+                      <i class="fa fa-calendar-times-o fa-4x"></i> 
+                      <p>你还没有正在关注的活动,你可以进入活动页面关注它</p>
+                    </div>  
+                  <% end %>
             </div>
         </div>
     </div>

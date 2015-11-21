@@ -8,8 +8,12 @@
             </div>
         </div>
         <div class="row">
-          <% for favorite in current_user.favorites %>
-            <%= render  favorite %> 
+          <% if current_user.favorites.count > 0 %>
+            <% for favorite in current_user.favorites %>
+              <%= render  favorite %> 
+            <% end %>
+          <% else %>
+             
           <% end %>
         </div>
     </div>
