@@ -19,3 +19,32 @@ div.float-control {
   top: 300px;
   left: 50px;
 }
+
+div.side-bar-scroll  {
+  margin-top: 20px;
+  width: 260px;
+
+  .btn {
+      width: 100%;
+      margin: 5px auto;
+  }
+
+
+}
+
+
+table {
+  margin-top: 20px;
+}
+
+
+.user-item {
+  
+  img {
+    display: inline-block;
+  } 
+
+  span {
+    display: inline-block;
+  }
+}

@@ -24,13 +24,14 @@ class ApplicationsController < ApplicationController
     @group = Group.find(params[:group_id])
     @application = Application.new(application_params)
 
+
     respond_to do |wants|
       if user_in_group? 
           flash[:notice] = 'You have in this group.'
           wants.html { redirect_to(@group) }
       else
 
-        if  @group.save
+        if  @application.save
           flash[:notice] = 'applicatin was successfully created.'
           wants.html { redirect_to(@group) }
           wants.xml { render :xml => @application, :status => :created, :location => @application }
@@ -46,19 +47,35 @@ class ApplicationsController < ApplicationController
   
 
   def agree
-    debugger    
     @application = Application.find(params[:id])
+    @application.agree_count += 1
     group = @application.group
     group.users << @application.user
+
+    judge_application_status
+
     if group.save
       flash[:notice] = 'successfully join group.'
     else
       flash[:notice] = 'failed join group.'
     end
+
   end
 
   def reject
-    debugger    
+    @application = Application.find(params[:id])
+    @application.reject_count += 1
+    group = @application.group
+    group.users << @application.user
+
+    judge_application_status
+
+    if group.save
+      flash[:notice] = 'successfully join group.'
+    else
+      flash[:notice] = 'failed join group.'
+    end
+
   end
 
   def destroy
@@ -85,5 +102,16 @@ class ApplicationsController < ApplicationController
     return permit_params
   end
 
+  #有问题
+  def judge_application_status
+    if @application.agree_count - @application.reject_count > 3 
+      @application.status = 1
+    elsif @application.reject_count - @application.agree_count > 3
+      @application.status = -1 
+      destroy 
+    else
+      @application.status = 0
+    end
+  end
 
 end

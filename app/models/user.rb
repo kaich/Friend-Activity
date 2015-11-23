@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  mount_uploader :avatar, AvatarUploader
+
   has_and_belongs_to_many :groups
   has_many :applications
   has_many :comments

@@ -4,7 +4,7 @@ class CreateApplications < ActiveRecord::Migration
       t.text :content
       t.integer :user_id
       t.integer :group_id
-      t.integer :status
+      t.integer :status  ,default: 0
 
       t.timestamps
     end

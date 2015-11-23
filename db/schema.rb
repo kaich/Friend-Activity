@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111061419) do
+ActiveRecord::Schema.define(version: 20151123083607) do
 
-  create_table "activities", force: true do |t|
+  create_table "activities", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.datetime "start_time"
@@ -25,11 +25,13 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.datetime "updated_at"
   end
 
-  create_table "applications", force: true do |t|
+  create_table "applications", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
     t.integer  "group_id"
-    t.integer  "status"
+    t.integer  "status",       default: 0
+    t.integer  "agree_count",  default: 0
+    t.integer  "reject_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151111061419) do
   add_index "applications", ["user_id", "group_id"], name: "index_applications_on_user_id_and_group_id", unique: true
   add_index "applications", ["user_id"], name: "index_applications_on_user_id"
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "content"
     t.string   "commentable_id"
@@ -47,7 +49,7 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.datetime "updated_at"
   end
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.integer  "activity_id"
@@ -59,7 +61,7 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.string   "avatar"
   end
 
-  create_table "favorites", force: true do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "favoritable_id"
     t.string   "favoritable_type"
@@ -69,7 +71,7 @@ ActiveRecord::Schema.define(version: 20151111061419) do
 
   add_index "favorites", ["favoritable_id", "favoritable_type"], name: "index_favorites_on_favoritable_id_and_favoritable_type", unique: true
 
-  create_table "groups", force: true do |t|
+  create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.text     "intro"
     t.integer  "user_id"
@@ -78,28 +80,28 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.string   "avatar"
   end
 
-  create_table "groups_users", force: true do |t|
+  create_table "groups_users", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "participator_activities", force: true do |t|
+  create_table "participator_activities", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "activity_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tracked_activities", force: true do |t|
+  create_table "tracked_activities", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "activity_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -113,12 +115,13 @@ ActiveRecord::Schema.define(version: 20151111061419) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
     t.string   "votable_type"
     t.integer  "voter_id"

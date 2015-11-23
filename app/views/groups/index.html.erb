@@ -1,25 +1,34 @@
-<% form_tag groups_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+<div class="col-md-9">
 
-<div class="float-control">
-  <%= link_to "<i class='fa fa-plus'></i>#{t :new_group}".html_safe , new_group_path ,class:'btn btn-primary'%> 
+  <% form_tag groups_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+
+  <table  class="table">
+  <% for group in @groups %>
+    <tr>
+      <td>
+       <%= link_to group.name ,group_path(group) %> 
+      </td>
+      <td>
+        <%= "Introduction: #{group.intro}" %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= will_paginate @groups ,renderer: BootstrapPagination::Rails%>
 </div>
+<div class="col-md-3 hidden-mobile">
+  <div class="side-bar-scroll">
+    <div class="panel panel-default">
+     <div class="panel-body">
+        <%= link_to "<i class='fa fa-plus'></i>#{t :new_group}".html_safe , new_group_path ,class:'btn btn-primary' %>
+     </div> 
+    </div>
+  </div>
+</div>  
 
-<table  class="table">
-<% for group in @groups %>
-  <tr>
-    <td>
-     <%= link_to group.name ,group_path(group) %> 
-    </td>
-    <td>
-      <%= "Introduction: #{group.intro}" %>
-    </td>
-  </tr>
-<% end %>
-</table>
-
-<%= will_paginate @groups ,renderer: BootstrapPagination::Rails%>

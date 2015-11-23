@@ -1,4 +1,6 @@
-<%= form_for [@group, if @group.nil? then @application  else @group.applications.build end] do |f| %>
-   <%= f.text_area :content %> 
-   <%= f.submit 'Join', :disable_with => 'ing...' %>
+<%= form_for [@group, if @group.nil? then @application  else @group.applications.build end] , class: "form" do |f| %>
+   <%= f.text_area :content ,class:"form-control" , placeholder:t(:input_your_apply_info)%> 
+   <%= button_tag(:type => "submit", :disable_with => 'ing...', "class" => "btn btn-primary") do%>
+    <i class="fa fa-paper-plane-o"></i> <%= t :appy_join_group %>
+   <% end %>
 <% end %>

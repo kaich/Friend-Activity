@@ -1,50 +1,65 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-     <%= @group.name %> 
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">
+       <%= @group.name %> 
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="group_avatar">
+        <%= image_tag(@group.avatar_url) if @group.avatar? %>  
+      </div>
+     <%= favorite_tag @group %>
+     <%= @group.intro %>
+    </div>
+    <div class="panel-footer">
+      <%= @group.created_at %>
     </div>
   </div>
-  <div class="panel-body">
-    <div class="group_avatar">
-      <%= image_tag(@group.avatar_url) if @group.avatar? %>  
+
+
+  
+  <%#activity%>
+  <table  class="activities table table-striped">
+  <% for activity in @activities %>
+    <tr>
+      <td>
+       <%= link_to activity.name ,group_activity_path(@group,activity) %> 
+      </td>
+      <td>
+        <%= "Introduction: #{activity.content}" %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+  <%= will_paginate @activities, renderer: BootstrapPagination::Rails %>
+
+
+</div>
+<div class="col-md-3 hidden-mobile">
+  <div class="side-bar-scroll">
+    <div class="panel panel-default">
+     <div class="panel-body">
+        <% if user_in_group? @group %>
+          <%= link_to "<i class='fa fa-plus'></i>#{t :new_activity}".html_safe , new_group_activity_path(@group) ,class:'btn btn-primary'%> 
+        <% end %>
+        <div id="apply-join-group">
+
+          <% if !user_in_group? @group %>
+            <%= render 'applications/form' %>
+          <% else %>
+            <%= render @group.applications %>
+          <% end %>
+
+        </div>
+        <div id="users-list">
+          <%##users%>
+            <table class="members table" summary="Group members">
+              <%= render @users %>
+            </table>
+          <%= will_paginate @users, renderer: BootstrapPagination::Rails %>         
+        </div>
+     </div> 
     </div>
-   <%= favorite_tag @group %>
-   <%= @group.intro %>
-  </div>
-  <div class="panel-footer">
-    <%= @group.created_at %>
   </div>
 </div>
-
-
-<div class="float-control">
-  <%= link_to "<i class='fa fa-plus'></i>#{t :new_activity}".html_safe , new_group_activity_path(@group) ,class:'btn btn-primary'%> 
-</div>
-
-<%= render @group.applications %>
-
-<% if !user_in_group? @group %>
-  <%= render 'applications/form' %>
-<% end %>
-
-<%#activity%>
-<table  class="activities table">
-<% for activity in @activities %>
-  <tr>
-    <td>
-     <%= link_to activity.name ,group_activity_path(@group,activity) %> 
-    </td>
-    <td>
-      <%= "Introduction: #{activity.content}" %>
-    </td>
-  </tr>
-<% end %>
-</table>
-<%= will_paginate @activities, renderer: BootstrapPagination::Rails %>
-
-<%##users%>
-<table class="members" summary="Group members">
-  <%= render @users %>
-</table>
-<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
-

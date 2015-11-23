@@ -101,3 +101,12 @@ zh:
   dropout:     "退出"
   
   untrack: "取消关注"
+
+  favorite_empty_title: "你还没有添加任何喜爱的群组"
+  favorite_empy_content: "你可以点击进入群组列表，浏览你的群组，添加它为喜爱，他会显示在这里，以便你快速浏览"
+
+  appy_join_group: "申请加入"
+  input_your_apply_info: "请输入你的申请信息..."
+
+  agree_group_application: "同意"
+  reject_group_application: "拒绝"
