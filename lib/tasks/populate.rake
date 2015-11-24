@@ -2,6 +2,7 @@ namespace :db do
   desc "create many faker entities"
   task :populate => :environment do
    make_users
+   make_notifications
    make_groups
    make_activities
    make_events
@@ -18,6 +19,19 @@ def make_users
     User.create!(:email => email , :password => password , :password_confirmation => password, :name => name)
   end 
   puts "create users"
+end
+
+def make_notifications
+  User.all.each do |user|
+
+    10.times do |n|
+      title = Faker::Name.name
+      content = Faker::Lorem.paragraph
+      Notification.create!(:title => title , :content => content , :user_id => user.id)
+    end
+
+  end 
+  puts "creatre notifications"
 end
 
 def make_groups

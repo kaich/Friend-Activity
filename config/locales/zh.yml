@@ -39,6 +39,7 @@ zh:
 
   search_descript: "这里包含了所有的已存在的群组，你可以尽情浏览搜索它们，然后选择你感兴趣的去申请加入它。"
   group_descript:  "这里包含了所有你已经加入的群组，你可以浏览相关信息，当然你也可以创建修或者修改它们。"
+  notification_descript: "这里包含了你所有的通知，阅读您的最新动态，包括申请、投票状况等"
   help_descript:   "这里是关于本站的帮助，由于使用的是Markdown语言，你应该了解它们，那会帮助你键指如飞。"
 
   favorite_descript: "你喜欢的群组，感兴趣的，才是对的"
@@ -110,3 +111,12 @@ zh:
 
   agree_group_application: "同意"
   reject_group_application: "拒绝"
+
+
+  join_group_title: "温馨提示"
+  join_group_message: "恭喜你已加入%{group_name}群"
+
+  reject_join_group_title: "温馨提示"
+  reject_join_group_message: "你已被拒绝加入%{group_name}群"
+
+  mark_read: "已读"

@@ -1,0 +1,16 @@
+<table  class="table">
+<% for notification in @notifications %>
+  <tr>
+    <td>
+     <%= link_to notification.title ,notification_path(notification) %> 
+    </td>
+    <td>
+      <%= "Introduction: #{notification.content}" %>
+    </td>
+    <td>
+      <%= link_to t(:mark_read), notification_path(notification) , method: "delete", class:"btn btn-primary" ,id: "mark_read", remote: true %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,4 +1,8 @@
 class ApplicationsController < ApplicationController
+  after_action  :judge_application_status , :only => [:agree, :reject]
+
+  include VoteModule
+
   def show
     debugger
 
@@ -28,7 +32,7 @@ class ApplicationsController < ApplicationController
     respond_to do |wants|
       if user_in_group? 
           flash[:notice] = 'You have in this group.'
-          wants.html { redirect_to(@group) }
+          wants.html { render (@group) }
       else
 
         if  @application.save
@@ -47,35 +51,11 @@ class ApplicationsController < ApplicationController
   
 
   def agree
-    @application = Application.find(params[:id])
-    @application.agree_count += 1
-    group = @application.group
-    group.users << @application.user
-
-    judge_application_status
-
-    if group.save
-      flash[:notice] = 'successfully join group.'
-    else
-      flash[:notice] = 'failed join group.'
-    end
-
+    upvotes
   end
 
   def reject
-    @application = Application.find(params[:id])
-    @application.reject_count += 1
-    group = @application.group
-    group.users << @application.user
-
-    judge_application_status
-
-    if group.save
-      flash[:notice] = 'successfully join group.'
-    else
-      flash[:notice] = 'failed join group.'
-    end
-
+    downvotes
   end
 
   def destroy
@@ -102,16 +82,22 @@ class ApplicationsController < ApplicationController
     return permit_params
   end
 
-  #有问题
+  #需要通知系统来给用户反馈
   def judge_application_status
-    if @application.agree_count - @application.reject_count > 3 
-      @application.status = 1
-    elsif @application.reject_count - @application.agree_count > 3
-      @application.status = -1 
+    if @voteable.get_upvotes.size - @voteable.get_downvotes.size >= 2 || (@group.users.count < 3 && @voteable.get_upvotes.size >= 1)
+      @voteable.status = 1
+      @group.users << current_user 
+      if @group.save
+        @notification = Notification.create(title:t(:join_group_title), content:t(:join_group_message ,user_id:current_user.id)) 
+      end
+    elsif @voteable.get_downvotes.size - @voteable.get_upvotes.size >= 2 
+      @voteable.status = -1 
       destroy 
+      @notification = Notification.create(title:t(:reject_join_group_title), content:t(:reject_join_group_message ,user_id:current_user.id)) 
     else
-      @application.status = 0
+      @voteable.status = 0
     end
   end
+    
 
 end

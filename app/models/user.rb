@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_and_belongs_to_many :groups
-  has_many :applications
   has_many :comments
   has_many :originated_group , class_name: :Activity ,foreign_key: :originator_id
 
@@ -22,6 +21,8 @@ class User < ActiveRecord::Base
 
   has_many :tracked_activities
   has_many :track_activities , :through => :tracked_activities, :source => :activity
+
+  has_many :notifications
 
   def add_favorite(favoritable)
     self.favorites << favoritable 
