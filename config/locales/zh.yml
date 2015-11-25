@@ -121,3 +121,14 @@ zh:
 
   mark_read: "已读"
   applying_group: "你的申请入群请求正在等待确认，请耐心等待!"
+
+  user_name: "用户名"
+  user_real_name: "真实姓名"
+  user_avatar: "用户图像"
+  user_qq_number: "qq"
+  user_job: "工作"
+  user_home_address: "户籍"
+  user_current_address: "现居住地"
+  user_signature: "签名"
+  user_intr: "用户简介"
+  update_user_info: "更新资料"
