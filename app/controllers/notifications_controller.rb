@@ -49,7 +49,7 @@ class NotificationsController < ApplicationController
   
     respond_to do |format|
 
-      debugger
+      format.js
       format.html { redirect_to(notifications_url) }
       format.xml  { head :ok }
     end

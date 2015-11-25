@@ -120,3 +120,4 @@ zh:
   reject_join_group_message: "你已被拒绝加入%{group_name}群"
 
   mark_read: "已读"
+  applying_group: "你的申请入群请求正在等待确认，请耐心等待!"

@@ -46,7 +46,13 @@
         <div id="apply-join-group">
 
           <% if !user_in_group? @group %>
-            <%= render 'applications/form' %>
+            <% if  current_user.applying_group? @group%>
+              <div class="alert alert-info">
+                <%= t(:applying_group) %>
+              </div> 
+            <% else %>
+              <%= render 'applications/form' %>
+            <% end %>
           <% else %>
             <%= render @group.applications %>
           <% end %>

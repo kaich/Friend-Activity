@@ -46,6 +46,8 @@ class ApplicationsController < ApplicationController
           #wants.xml { render :xml => @application.errors, :status => :unprocessable_entity }
         end
       end
+
+      wants.js
     end
   end
   
@@ -86,17 +88,19 @@ class ApplicationsController < ApplicationController
   def judge_application_status
     if @voteable.get_upvotes.size - @voteable.get_downvotes.size >= 2 || (@group.users.count < 3 && @voteable.get_upvotes.size >= 1)
       @voteable.status = 1
-      @group.users << current_user 
+      @group.users << @voteable.user 
       if @group.save
-        @notification = Notification.create(title:t(:join_group_title), content:t(:join_group_message ,user_id:current_user.id)) 
+        @notification = Notification.create(title:t(:join_group_title), content:t(:join_group_message , group_name: @group.name) ,user_id:@voteable.user.id) 
       end
     elsif @voteable.get_downvotes.size - @voteable.get_upvotes.size >= 2 
       @voteable.status = -1 
       destroy 
-      @notification = Notification.create(title:t(:reject_join_group_title), content:t(:reject_join_group_message ,user_id:current_user.id)) 
+      @notification = Notification.create(title:t(:reject_join_group_title), content:t(:reject_join_group_message, group_name: @group.name) ,user_id:@voteable.user.id) 
     else
       @voteable.status = 0
     end
+
+    @voteable.save
   end
     
 

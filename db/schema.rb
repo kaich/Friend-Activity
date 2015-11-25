@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20151124065545) do
     t.string   "avatar"
   end
 
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id"
+
   create_table "groups_users", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "user_id"

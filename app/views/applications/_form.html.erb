@@ -1,4 +1,4 @@
-<%= form_for [@group, if @group.nil? then @application  else @group.applications.build end] , class: "form", remote: true do |f| %>
+<%= form_for [@group, if @group.nil? then @application  else @group.applications.build end] , remote: true do |f| %>
    <%= f.text_area :content ,class:"form-control" , placeholder:t(:input_your_apply_info)%> 
    <%= button_tag(:type => "submit", :disable_with => 'ing...', "class" => "btn btn-primary") do%>
     <i class="fa fa-paper-plane-o"></i> <%= t :appy_join_group %>

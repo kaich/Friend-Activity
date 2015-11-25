@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
     self.participant_activities.include? activity
   end
 
+  def applying_group?(group)
+    !Application.find_by(user_id: self.id , group_id: group.id).nil?
+  end
+
 end
