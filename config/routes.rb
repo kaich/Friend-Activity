@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'regist' }
 
   namespace :users do 
+    get ':id/information' , to: 'information#show' , as: 'show_information'
     get 'information' , to: 'information#edit'
     put 'information' , to: 'information#update'
   end

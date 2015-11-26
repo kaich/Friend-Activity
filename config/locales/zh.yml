@@ -132,3 +132,8 @@ zh:
   user_signature: "签名"
   user_intr: "用户简介"
   update_user_info: "更新资料"
+
+  update_user_information_success: "更新用户资料成功！"
+  create_group_success: "创建群组成功！"
+  create_activity_sucess: "创建活动成功！"
+  create_event_success:  "创建事件成功！"

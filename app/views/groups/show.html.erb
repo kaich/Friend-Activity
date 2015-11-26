@@ -60,7 +60,7 @@
         </div>
         <div id="users-list">
           <%##users%>
-            <table class="members table" summary="Group members">
+            <table class="group-members table" summary="Group members">
               <%= render @users %>
             </table>
           <%= will_paginate @users, renderer: BootstrapPagination::Rails %>         

@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     
     respond_to do |wants|
       if @event.save
-        flash[:success] = ' was successfully created.'
+        flash[:success] = t(:create_event_success)
         wants.html { redirect_to(@event) }
         wants.xml { render :xml => @event, :status => :created, :location => @event }
       else

@@ -1,0 +1,18 @@
+<div class="col-md-3">
+  <div class="side-bar-scroll">
+    <div class="panel panel-default">
+     <div class="panel-body">
+        <div class="user-info">
+          <%= image_tag(@user.avatar? ? @user.avatar_url : "avatar/large")  %>  
+          <div class="information">
+            <p> <%= @user.name %></p>
+            <p> <%= @user.signature %> </p>
+          </div>
+        </div>
+     </div> 
+    </div>
+  </div>
+</div>
+<div class="col-md-9">
+  <p class="alert alert-danger"> wating for development <p>  
+</div>

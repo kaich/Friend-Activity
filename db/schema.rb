@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20151125110220) do
     t.string   "current_address"
     t.string   "home_address"
     t.text     "intr"
+    t.date     "age"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

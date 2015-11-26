@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     
     respond_to do |wants|
       if current_user.save
-        flash[:success] = ' was successfully created.'
+        flash[:success] = t(:create_group_success)
         wants.html { redirect_to(@group) }
         wants.xml { render :xml => @group, :status => :created, :location => @group }
       else

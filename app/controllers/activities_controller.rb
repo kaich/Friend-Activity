@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
     
     respond_to do |wants|
       if @activity.save
-        flash[:success] = 'activity was successfully created.'
+        flash[:success] = t(:create_activity_sucess)
         wants.html { redirect_to({action: "show", id: @activity.id}) }
         wants.xml { render :xml => @activity, :status => :created, :location => @activity }
       else

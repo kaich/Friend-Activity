@@ -42,9 +42,12 @@ table {
   
   img {
     display: inline-block;
+    height: 24px;
+    width:  24px;
   } 
 
-  span {
+  a {
+    margin-left: 10px;
     display: inline-block;
   }
 }
