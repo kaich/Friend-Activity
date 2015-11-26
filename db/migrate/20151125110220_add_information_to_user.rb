@@ -7,5 +7,6 @@ class AddInformationToUser < ActiveRecord::Migration
     add_column :users, :current_address, :string
     add_column :users, :home_address, :string
     add_column :users, :intr, :text
+    add_column :users, :age, :date
   end
 end

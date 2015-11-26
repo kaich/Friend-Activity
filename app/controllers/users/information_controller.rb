@@ -9,8 +9,8 @@ class Users::InformationController < ApplicationController
   
     respond_to do |format|
       if @user.update(user_params)
-        flash[:notice] = ' was successfully updated.'
-        format.html { redirect_to(@user) }
+        flash[:success] = ' was successfully updated.'
+        format.html { redirect_to( root_path ) }
         format.xml  { head :ok }
       else
         format.html { render action: 'edit' }
