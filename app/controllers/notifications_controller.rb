@@ -21,6 +21,9 @@ class NotificationsController < ApplicationController
 
   def create
     @notification = Notification.new(params[:notification])
+
+    message = {title: @notification.title, content: @notification.content}
+    MessageBus.publish "/notification" , message , user_id: [current_user.id] 
     
     respond_to do |wants|
       if @notification.save

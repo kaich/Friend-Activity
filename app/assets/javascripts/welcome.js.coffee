@@ -5,3 +5,10 @@
 
 $ -> $(".portfolio-modal").detach().appendTo("body")
 
+$ ->
+  MessageBus.start()
+
+  MessageBus.callbackInterval = 500
+  MessageBus.subscribe("/notification", (data) ->
+   alert(data.message)
+ )

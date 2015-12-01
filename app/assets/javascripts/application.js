@@ -23,4 +23,5 @@
 //= require markdown-js
 //= require marked
 //= require to-markdown
+//= require message-bus
 //= require_tree .

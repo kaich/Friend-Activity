@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'information' , to: 'information#edit'
     put 'information' , to: 'information#update'
   end
-  
+
   resources :favorites 
     
   resources :notifications

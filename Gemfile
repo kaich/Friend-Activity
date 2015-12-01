@@ -1,5 +1,5 @@
-#source 'https://rubygems.org'
-source 'https://ruby.taobao.org'
+source 'https://rubygems.org'
+#source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -68,6 +68,13 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 #图表
 gem 'lazy_high_charts'
+
+#通知
+gem 'message_bus'
+
+#字典数据库
+gem 'redis', '~>3.2'
+gem "hiredis", "~> 0.4.5"
 
 #前端包管理rails-assets （部署时候服务器崩溃)
 #source 'https://rails-assets.org' do
