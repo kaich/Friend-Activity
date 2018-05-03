@@ -88,11 +88,6 @@ gem "hiredis", "~> 0.4.5"
 #前端包管理bower-rails
 gem "bower-rails", "~> 0.10.0"
 
-#部署
-gem 'capistrano-rails', :group => :development
-gem 'capistrano-passenger', :group => :development
-gem 'capistrano-rvm', :group => :development
-
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -108,6 +103,14 @@ group :development , :test do
   gem 'web-console', '~> 2.0'
   # generates fake data
   gem 'faker'
+
+  # deploy 
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails-console' 
+  gem 'capistrano3-puma', require: false 
 end
 # gem 'debugger', group: [:development, :test]
 

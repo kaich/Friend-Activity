@@ -35,3 +35,4 @@
 
 
 $("[data-provide=markdown]").markdown({language: 'zh'})
+;

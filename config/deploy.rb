@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock "~> 3.10.1"
 
 set :application, 'FriendParty'
 set :repo_url, 'git@github.com:kaich/Friend-Activity.git'
@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:kaich/Friend-Activity.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/friend-activity'
+set :deploy_to, '/home/deployer/www/friend-activity'
 
 # Default value for :scm is :git
 # set :scm, :git
