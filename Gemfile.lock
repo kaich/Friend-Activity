@@ -1,5 +1,5 @@
 GEM
-  remote: https://gems.ruby-china.org/
+  remote: https://rubygems.org/
   specs:
     actioncable (5.1.6)
       actionpack (= 5.1.6)
@@ -145,7 +145,6 @@ GEM
     momentjs-rails (2.20.1)
       railties (>= 3.1)
     multi_json (1.13.1)
-    mysql2 (0.5.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
@@ -289,7 +288,6 @@ DEPENDENCIES
   message_bus
   mini_magick (= 3.7.0)
   momentjs-rails (>= 2.9.0)
-  mysql2
   qiniu (~> 6.2.1)
   rails (~> 5.1.5)
   redcarpet
